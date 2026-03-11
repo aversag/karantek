@@ -1,32 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-/* --- TAILWIND JIT WORKAROUND --- */
-/* Forcing critical spacing classes that are dropped by the compiler */
-.py-24 { padding-top: 6rem !important; padding-bottom: 6rem !important; }
-.mb-10 { margin-bottom: 2.5rem !important; }
-.mb-16 { margin-bottom: 4rem !important; }
-.mb-20 { margin-bottom: 5rem !important; }
-.mb-24 { margin-bottom: 6rem !important; }
-.mb-32 { margin-bottom: 8rem !important; }
-.gap-8 { gap: 2rem !important; }
-.gap-12 { gap: 3rem !important; }
-.gap-16 { gap: 4rem !important; }
-.p-10 { padding: 2.5rem !important; }
-.pt-16 { padding-top: 4rem !important; }
-
-@media (min-width: 1024px) {
-  .lg\:py-32 { padding-top: 8rem !important; padding-bottom: 8rem !important; }
-  .lg\:gap-12 { gap: 3rem !important; }
-  .lg\:gap-20 { gap: 5rem !important; }
-  .lg\:gap-24 { gap: 6rem !important; }
-  .lg\:p-12 { padding: 3rem !important; }
-}
-
-@media (min-width: 1280px) {
-  .xl\:gap-12 { gap: 3rem !important; }
-}
-/* ------------------------------- */
+/* NOTE: Tailwind v4 via @tailwindcss/vite does not support @source inline safelists.
+   Spacing classes (mb-*, gap-*, py-*) that are not statically found in source files
+   are NOT compiled. Use inline style attributes for critical spacing in components. */
 
 :root {
   --color-bg: #0a0f24;
@@ -141,17 +118,7 @@ button {
   background-color: var(--color-accent);
 }
 
-.text-center {
-  text-align: center;
-}
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
 
 /* Glassmorphism Classes */
 .glass-panel {
@@ -613,87 +580,7 @@ blockquote footer {
   letter-spacing: 1px;
 }
 
-/* ======== OFFRE (SERVICES) ======== */
-.services-section {
-  background-color: var(--color-bg-alt);
-}
 
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-bottom: 5rem;
-}
-
-.service-card {
-  padding: 3rem;
-}
-
-.service-header {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--glass-border);
-}
-
-.service-icon {
-  color: var(--color-accent);
-}
-
-.service-header h3 {
-  font-size: 1.8rem;
-  color: var(--color-white);
-}
-
-.service-list {
-  list-style: none;
-}
-
-.service-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.05rem;
-}
-
-.service-list li:last-child {
-  margin-bottom: 0;
-}
-
-.check-icon {
-  color: var(--color-accent);
-  flex-shrink: 0;
-  margin-top: 3px;
-}
-
-.triple-approach h3 {
-  font-size: 2rem;
-  color: var(--color-white);
-}
-
-.approach-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.approach-item {
-  padding: 2.5rem 2rem;
-}
-
-.approach-item h4 {
-  color: var(--color-accent);
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-
-.approach-item p {
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
-}
 
 /* ======== CONTACT ======== */
 .contact-section {
