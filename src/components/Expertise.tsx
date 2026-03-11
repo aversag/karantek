@@ -4,7 +4,9 @@ const Expertise = () => {
   return (
     <section id="expertise" className="section expertise-section">
       <div className="container">
-        <h2 className="section-title fade-in">Parcours & Expertise</h2>
+        <div className="text-left">
+          <h2 className="section-title fade-in">Parcours & Expertise</h2>
+        </div>
         
         <div className="expertise-content">
           <div className="expertise-text glass-panel fade-in delay-1">

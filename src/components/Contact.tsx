@@ -4,9 +4,9 @@ const Contact = () => {
   return (
     <section id="contact-form" className="contact-section section">
       <div className="container">
-        <div className="section-header text-center fade-in delay-1">
-          <h2>Nous Contacter</h2>
-          <p className="subtitle">Prendre rendez-vous ou obtenir plus d'informations</p>
+        <div className="text-left fade-in delay-1" style={{ marginBottom: '5rem' }}>
+          <h2 className="section-title fade-in">Nous Contacter</h2>
+          <p className="text-[var(--color-text-muted)] font-light leading-relaxed text-[17px]">Prendre rendez-vous ou obtenir plus d'informations</p>
         </div>
 
         <div className="contact-form-container glass-panel fade-in delay-2">
@@ -34,7 +34,7 @@ const Contact = () => {
 
             <div className="form-group">
               <label htmlFor="email">Adresse e-mail</label>
-              <input type="email" id="email" name="email" required placeholder="jean.dupont@exemple.com" />
+              <input type="email" id="email" name="email" required placeholder="contact@karantek.fr" />
             </div>
 
             <div className="form-group">

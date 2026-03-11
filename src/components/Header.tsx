@@ -5,6 +5,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOffresOpenMobile, setIsOffresOpenMobile] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +13,35 @@ const Header = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+      }
+    );
+
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const relevantIds = [
+      'hero', 'expertise', 'valeurs', 'offre', 'contact', 'contact-form',
+      'investissement-cote', 'investissement-immobilier', 'investissement-non-cote', 'suivi-reporting', 'synthese'
+    ];
+    sections.forEach((section) => {
+      if (relevantIds.includes(section.id)) {
+        observer.observe(section);
+      }
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -22,11 +52,11 @@ const Header = () => {
         </a>
         
         <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <a href="#expertise" className="nav-item" onClick={() => setIsMenuOpen(false)}>Expertise</a>
-          <a href="#valeurs" className="nav-item" onClick={() => setIsMenuOpen(false)}>Valeurs</a>
+          <a href="#expertise" className={`nav-item ${activeSection === 'expertise' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Expertise</a>
+          <a href="#valeurs" className={`nav-item ${activeSection === 'valeurs' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Valeurs</a>
           
           <div className="relative group w-full md:w-auto">
-            <a href="#offre" className="nav-item flex items-center justify-between md:justify-start gap-1 w-full md:w-auto" onClick={(e) => {
+            <a href="#offre" className={`nav-item flex items-center justify-between md:justify-start gap-1 w-full md:w-auto ${['offre', 'investissement-cote', 'investissement-immobilier', 'investissement-non-cote', 'suivi-reporting', 'synthese'].includes(activeSection) ? 'active' : ''}`} onClick={(e) => {
               if (window.innerWidth < 768) {
                 e.preventDefault();
                 setIsOffresOpenMobile(!isOffresOpenMobile);

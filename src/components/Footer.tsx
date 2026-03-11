@@ -26,24 +26,24 @@ const Footer = () => {
                 <a 
                   href="#" 
                   onMouseEnter={(e) => {
-                    e.currentTarget.href = `mailto:${"r.guitelmacher"}@${"karantek.fr"}`;
+                    e.currentTarget.href = `mailto:${"contact"}@${"karantek.fr"}`;
                   }}
                   onFocus={(e) => {
-                    e.currentTarget.href = `mailto:${"r.guitelmacher"}@${"karantek.fr"}`;
+                    e.currentTarget.href = `mailto:${"contact"}@${"karantek.fr"}`;
                   }}
                   onClick={(e) => {
                     if (e.currentTarget.getAttribute('href') === '#') {
                       e.preventDefault();
-                      window.location.href = `mailto:${"r.guitelmacher"}@${"karantek.fr"}`;
+                      window.location.href = `mailto:${"contact"}@${"karantek.fr"}`;
                     }
                   }}
                 >
-                  {`r.guitelmacher@${"karantek.fr"}`}
+                  {`contact@${"karantek.fr"}`}
                 </a>
               </li>
               <li>
                 <MapPin size={18} className="contact-icon" />
-                <span>Romain Guitelmacher - Fondateur</span>
+                <span>Lyon, France</span>
               </li>
             </ul>
           </div>

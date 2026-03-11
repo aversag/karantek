@@ -23,7 +23,9 @@ const Values = () => {
   return (
     <section id="valeurs" className="section values-section">
       <div className="container">
-        <h2 className="section-title fade-in">Nos Valeurs</h2>
+        <div className="text-left">
+          <h2 className="section-title fade-in">Nos Valeurs</h2>
+        </div>
         
         <div className="values-grid">
           {values.map((value, index) => (
