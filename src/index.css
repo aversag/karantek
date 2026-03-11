@@ -21,7 +21,18 @@
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-blur: blur(16px);
 
-  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 250ms ease-out;
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all var(--transition-slow);
+}
+
+/* Respect des préférences utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 * {
@@ -71,7 +82,7 @@ h6 {
 a {
   color: inherit;
   text-decoration: none;
-  transition: var(--transition-smooth);
+  transition: all var(--transition-fast);
 }
 
 button {
@@ -79,7 +90,7 @@ button {
   cursor: pointer;
   border: none;
   background: none;
-  transition: var(--transition-smooth);
+  transition: all var(--transition-fast);
 }
 
 .container {
@@ -130,7 +141,7 @@ button {
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 2.5rem;
-  transition: var(--transition-smooth);
+  transition: all var(--transition-normal);
 }
 
 .glass-panel:hover {
@@ -197,10 +208,10 @@ button {
 /* Animations */
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(20px);
   transition:
-    opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in.visible {
@@ -260,7 +271,7 @@ button {
   font-size: 0.95rem;
   color: var(--color-text-muted);
   position: relative;
-  transition: var(--transition-smooth);
+  transition: color var(--transition-fast);
 }
 
 .nav-item::after {
@@ -531,7 +542,7 @@ button {
   justify-content: center;
   margin: 0 auto 2rem;
   border: 1px solid rgba(194, 154, 74, 0.2);
-  transition: var(--transition-smooth);
+  transition: all var(--transition-normal);
 }
 
 .value-card:hover .icon-wrapper {
@@ -542,7 +553,7 @@ button {
 
 .value-icon {
   color: var(--color-accent);
-  transition: var(--transition-smooth);
+  transition: color var(--transition-fast);
 }
 
 .value-card:hover .value-icon {
@@ -618,7 +629,7 @@ blockquote footer {
   border-radius: 8px;
   color: var(--color-white);
   font-family: inherit;
-  transition: var(--transition-smooth);
+  transition: all var(--transition-fast);
 }
 
 .contact-form input::placeholder,
