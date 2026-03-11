@@ -25,9 +25,17 @@ const Footer = () => {
                 <Mail size={18} className="contact-icon" />
                 <a 
                   href="#" 
+                  onMouseEnter={(e) => {
+                    e.currentTarget.href = `mailto:${"r.guitelmacher"}@${"karantek.fr"}`;
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.href = `mailto:${"r.guitelmacher"}@${"karantek.fr"}`;
+                  }}
                   onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = `mailto:${"r.guitelmacher"}@${"karantek.fr"}`;
+                    if (e.currentTarget.getAttribute('href') === '#') {
+                      e.preventDefault();
+                      window.location.href = `mailto:${"r.guitelmacher"}@${"karantek.fr"}`;
+                    }
                   }}
                 >
                   {`r.guitelmacher@${"karantek.fr"}`}

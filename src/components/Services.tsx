@@ -25,14 +25,14 @@ const Services = () => {
         </div>
 
         {/* --- Section 1: Les Piliers --- */}
-        <div className="grid md:grid-cols-2" style={{ gap: '4rem', marginBottom: '8rem' }}>
+        <div className="grid md:grid-cols-2" style={{ gap: '2rem', marginBottom: '8rem' }}>
           {/* Pilier 1 */}
-          <div className="group relative flex flex-col">
+          <div className="group relative flex flex-col h-full">
             <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
-            <div className="relative flex-grow flex flex-col">
+            <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 p-8 sm:p-10">
               <div className="flex items-center" style={{ marginBottom: '1.5rem' }}>
                 <div className="shrink-0 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center group-hover:border-[var(--color-accent)]/30 transition-colors duration-500" style={{ width: '3.5rem', height: '3.5rem', marginRight: '1.25rem' }}>
-                  <Briefcase strokeWidth={1.5} size={28} className="text-[var(--color-accent)]" />
+                  <Briefcase strokeWidth={1.5} size={28} className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <h3 className="text-3xl lg:text-4xl text-[var(--color-white)] font-semibold font-heading leading-tight tracking-tight">Gestion<br/>Financière</h3>
               </div>
@@ -44,12 +44,12 @@ const Services = () => {
           </div>
 
           {/* Pilier 2 */}
-          <div className="group relative flex flex-col">
+          <div className="group relative flex flex-col h-full">
             <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
-            <div className="relative flex-grow flex flex-col">
+            <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 p-8 sm:p-10">
               <div className="flex items-center" style={{ marginBottom: '1.5rem' }}>
                 <div className="shrink-0 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center group-hover:border-[var(--color-accent)]/30 transition-colors duration-500" style={{ width: '3.5rem', height: '3.5rem', marginRight: '1.25rem' }}>
-                  <Building2 strokeWidth={1.5} size={28} className="text-[var(--color-accent)]" />
+                  <Building2 strokeWidth={1.5} size={28} className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <h3 className="text-3xl lg:text-4xl text-[var(--color-white)] font-semibold font-heading leading-tight tracking-tight">Gestion<br/>Immobilière</h3>
               </div>
@@ -74,9 +74,9 @@ const Services = () => {
         <div className="fade-in relative" style={{ marginBottom: '8rem' }}>
           <div className="absolute -top-20 -right-20 bg-[var(--color-accent)] opacity-[0.02] rounded-full blur-[100px] pointer-events-none" style={{ width: '24rem', height: '24rem' }}></div>
 
-          <div className="flex flex-col lg:flex-row items-start" style={{ gap: '4rem' }}>
+          <div className="flex flex-col lg:flex-row items-stretch" style={{ gap: '2rem' }}>
             {/* Colonne Titre (Gauche) */}
-            <div className="lg:w-1/3 relative" style={{ zIndex: 10 }}>
+            <div className="lg:w-1/3 relative flex flex-col justify-center" style={{ zIndex: 10 }}>
               <h3 className="text-[var(--color-accent)] font-bold tracking-widest uppercase" style={{ fontSize: '0.875rem', marginBottom: '1rem' }}>Les Marchés Publics</h3>
               <h4 className="font-heading text-[var(--color-white)] leading-tight" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', marginBottom: '1.5rem' }}>L'Investissement<br/>Coté</h4>
               <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '17px' }}>
@@ -85,25 +85,43 @@ const Services = () => {
             </div>
 
             {/* Colonne Contenu (Droite) */}
-            <div className="lg:w-2/3 grid sm:grid-cols-2 w-full" style={{ gap: '2.5rem', zIndex: 10 }}>
-              <div className="flex flex-col group relative">
-                <div className="text-[var(--color-accent)] opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" style={{ marginBottom: '1.5rem' }}>
-                  <SlidersHorizontal strokeWidth={1.5} size={40} />
+            <div className="lg:w-2/3 grid sm:grid-cols-2 w-full" style={{ gap: '2rem', zIndex: 10 }}>
+              <div className="group relative flex flex-col h-full">
+                <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
+                <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 p-8 overflow-hidden">
+                  <div className="absolute top-0 right-0 bg-[var(--color-accent)] opacity-[0.05] rounded-full blur-2xl" style={{ width: '8rem', height: '8rem' }}></div>
+                  
+                  <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
+                    <SlidersHorizontal className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} size={28} />
+                  </div>
+                  
+                  <h5 className="text-[var(--color-white)] font-semibold tracking-tight relative z-10" style={{ fontSize: '1.5rem', marginBottom: '1.25rem' }}>Gestion Personnalisée</h5>
+                  
+                  <div className="relative z-10 bg-gradient-to-r from-[var(--color-accent)] to-transparent opacity-50" style={{ width: '3rem', height: '1px', marginBottom: '1.25rem' }}></div>
+                  
+                  <p className="text-[var(--color-text-muted)] font-light leading-relaxed flex-grow relative z-10" style={{ fontSize: '1rem' }}>
+                    Agilité tactique, intégration ESG et création de produits structurés sur-mesure.
+                  </p>
                 </div>
-                <h5 className="text-[var(--color-white)] font-semibold tracking-tight" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Gestion Personnalisée</h5>
-                <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '1rem' }}>
-                  Agilité tactique, intégration ESG et création de produits structurés sur-mesure.
-                </p>
               </div>
 
-              <div className="flex flex-col group relative">
-                <div className="text-[var(--color-accent)] opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" style={{ marginBottom: '1.5rem' }}>
-                  <Users strokeWidth={1.5} size={40} />
+              <div className="group relative flex flex-col h-full">
+                <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
+                <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 p-8 overflow-hidden">
+                  <div className="absolute top-0 right-0 bg-[var(--color-accent)] opacity-[0.05] rounded-full blur-2xl" style={{ width: '8rem', height: '8rem' }}></div>
+
+                  <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
+                    <Users className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} size={28} />
+                  </div>
+                  
+                  <h5 className="text-[var(--color-white)] font-semibold tracking-tight relative z-10" style={{ fontSize: '1.5rem', marginBottom: '1.25rem' }}>Gestion Déléguée</h5>
+                  
+                  <div className="relative z-10 bg-gradient-to-r from-[var(--color-accent)] to-transparent opacity-50" style={{ width: '3rem', height: '1px', marginBottom: '1.25rem' }}></div>
+                  
+                  <p className="text-[var(--color-text-muted)] font-light leading-relaxed flex-grow relative z-10" style={{ fontSize: '1rem' }}>
+                    Sélection d'experts via une architecture ouverte et mise en concurrence rigoureuse.
+                  </p>
                 </div>
-                <h5 className="text-[var(--color-white)] font-semibold tracking-tight" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Gestion Déléguée</h5>
-                <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '1rem' }}>
-                  Sélection d'experts via une architecture ouverte et mise en concurrence rigoureuse.
-                </p>
               </div>
             </div>
           </div>
@@ -120,14 +138,22 @@ const Services = () => {
              <h3 className="text-[var(--color-accent)] font-bold tracking-widest uppercase text-center" style={{ fontSize: '0.875rem', marginBottom: '1rem' }}>L'Économie Réelle</h3>
              <h4 className="font-heading text-[var(--color-white)] text-center" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', marginBottom: '3rem' }}>Les Marchés Privés & Immobiliers</h4>
 
-             <div className="grid lg:grid-cols-3" style={{ gap: '1.5rem' }}>
+             <div className="grid lg:grid-cols-3" style={{ gap: '2rem' }}>
                {/* Fonds Institutionnels */}
                <div className="group relative flex flex-col h-full">
-                 <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-b from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
-                 <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 rounded-[2rem] flex-grow flex flex-col group-hover:border-[var(--color-accent)]/20 transition-colors duration-500" style={{ padding: '2rem 2rem 2.5rem' }}>
-                   <Target className="text-[var(--color-accent)] opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" strokeWidth={1.5} size={32} style={{ marginBottom: '1.5rem' }}/>
-                   <h5 className="text-[var(--color-white)] font-semibold tracking-tight" style={{ fontSize: '1.35rem', marginBottom: '1rem' }}>Fonds Institutionnels</h5>
-                   <p className="text-[var(--color-text-muted)] font-light leading-relaxed flex-grow" style={{ fontSize: '0.95rem' }}>
+                 <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
+                 <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 p-8 overflow-hidden">
+                   <div className="absolute top-0 right-0 bg-[var(--color-accent)] opacity-[0.05] rounded-full blur-2xl" style={{ width: '8rem', height: '8rem' }}></div>
+                   
+                   <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
+                     <Target className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} size={28}/>
+                   </div>
+                   
+                   <h5 className="text-[var(--color-white)] font-semibold tracking-tight relative z-10" style={{ fontSize: '1.35rem', marginBottom: '1.25rem' }}>Fonds Institutionnels</h5>
+                   
+                   <div className="relative z-10 bg-gradient-to-r from-[var(--color-accent)] to-transparent opacity-50" style={{ width: '3rem', height: '1px', marginBottom: '1.25rem' }}></div>
+                   
+                   <p className="text-[var(--color-text-muted)] font-light leading-relaxed flex-grow relative z-10" style={{ fontSize: '1rem' }}>
                      Diversification optimale via l'accès privilégié aux grands fonds fermés (vintages et maturités).
                    </p>
                  </div>
@@ -135,11 +161,19 @@ const Services = () => {
                
                {/* Direct & Niche */}
                <div className="group relative flex flex-col h-full">
-                 <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-b from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
-                 <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 rounded-[2rem] flex-grow flex flex-col group-hover:border-[var(--color-accent)]/20 transition-colors duration-500" style={{ padding: '2rem 2rem 2.5rem' }}>
-                   <TrendingUp className="text-[var(--color-accent)] opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" strokeWidth={1.5} size={32} style={{ marginBottom: '1.5rem' }}/>
-                   <h5 className="text-[var(--color-white)] font-semibold tracking-tight" style={{ fontSize: '1.35rem', marginBottom: '1rem' }}>Direct & Niche</h5>
-                   <p className="text-[var(--color-text-muted)] font-light leading-relaxed flex-grow" style={{ fontSize: '0.95rem' }}>
+                 <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
+                 <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 p-8 overflow-hidden">
+                   <div className="absolute top-0 right-0 bg-[var(--color-accent)] opacity-[0.05] rounded-full blur-2xl" style={{ width: '8rem', height: '8rem' }}></div>
+                   
+                   <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
+                     <TrendingUp className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} size={28}/>
+                   </div>
+                   
+                   <h5 className="text-[var(--color-white)] font-semibold tracking-tight relative z-10" style={{ fontSize: '1.35rem', marginBottom: '1.25rem' }}>Direct & Niche</h5>
+                   
+                   <div className="relative z-10 bg-gradient-to-r from-[var(--color-accent)] to-transparent opacity-50" style={{ width: '3rem', height: '1px', marginBottom: '1.25rem' }}></div>
+                   
+                   <p className="text-[var(--color-text-muted)] font-light leading-relaxed flex-grow relative z-10" style={{ fontSize: '1rem' }}>
                      Exposition ciblée sur des thématiques porteuses (Tech, US, Santé) sans frais intermédiaires.
                    </p>
                  </div>
@@ -147,13 +181,19 @@ const Services = () => {
 
                {/* Club-deals */}
                <div className="group relative flex flex-col h-full">
-                 <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-b from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/10 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
-                 <div className="relative bg-gradient-to-br from-[#161616]/80 to-[var(--color-accent)]/5 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 overflow-hidden" style={{ padding: '2rem 2rem 2.5rem' }}>
+                 <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
+                 <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 p-8 overflow-hidden">
                    <div className="absolute top-0 right-0 bg-[var(--color-accent)] opacity-[0.05] rounded-full blur-2xl" style={{ width: '8rem', height: '8rem' }}></div>
-                   <Crown className="text-[var(--color-white)] opacity-90 group-hover:opacity-100 group-hover:scale-110 group-hover:text-[var(--color-accent)] transition-all duration-500" strokeWidth={1.5} size={32} style={{ marginBottom: '1.5rem' }}/>
-                   <h5 className="text-white font-semibold tracking-tight relative" style={{ fontSize: '1.35rem', marginBottom: '1rem', zIndex: 10 }}>Club-deals Exclusifs</h5>
-                   <div className="bg-[var(--color-accent)] opacity-50" style={{ width: '2rem', height: '1px', marginBottom: '1rem' }}></div>
-                   <p className="text-[var(--color-text-muted)] font-light leading-relaxed flex-grow relative" style={{ fontSize: '0.95rem', zIndex: 10 }}>
+                   
+                   <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
+                     <Crown className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} size={28}/>
+                   </div>
+                   
+                   <h5 className="text-white font-semibold tracking-tight relative z-10" style={{ fontSize: '1.35rem', marginBottom: '1.25rem' }}>Club-deals Exclusifs</h5>
+                   
+                   <div className="relative z-10 bg-gradient-to-r from-[var(--color-accent)] to-transparent opacity-50" style={{ width: '3rem', height: '1px', marginBottom: '1.25rem' }}></div>
+                   
+                   <p className="text-[var(--color-text-muted)] font-light leading-relaxed flex-grow relative z-10" style={{ fontSize: '1rem' }}>
                      Opérations tangibles confidentielles de PME et dette obligataire offrant une résilience asymétrique.
                    </p>
                  </div>
@@ -167,9 +207,9 @@ const Services = () => {
         <div className="fade-in relative" style={{ marginBottom: '8rem', paddingTop: '3rem', paddingBottom: '3rem' }}>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl bg-gradient-to-r from-transparent via-white/10 to-transparent" style={{ height: '1px' }}></div>
 
-          <div className="flex flex-col lg:flex-row items-start max-w-6xl mx-auto" style={{ gap: '4rem', marginTop: '4rem' }}>
+          <div className="flex flex-col lg:flex-row items-stretch max-w-6xl mx-auto" style={{ gap: '2rem', marginTop: '4rem' }}>
             {/* Colonne Gauche */}
-            <div className="lg:w-5/12" style={{ zIndex: 10 }}>
+            <div className="lg:w-5/12 flex flex-col justify-center" style={{ zIndex: 10 }}>
               <h4 className="font-heading text-[var(--color-white)] leading-tight" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', marginBottom: '2rem' }}>Monitoring & <br className="hidden lg:block"/>Gouvernance</h4>
               <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '17px' }}>
                 Pour s'assurer que la stratégie décidée soit bien celle implémentée, nous imposons l'agrégation de vos comptes et un suivi rigoureux sur l'ensemble des actifs.
@@ -177,40 +217,47 @@ const Services = () => {
             </div>
 
             {/* Colonne Droite */}
-            <div className="lg:w-7/12 flex flex-col" style={{ gap: '2.5rem', zIndex: 10 }}>
-              <div className="flex items-start" style={{ gap: '1.5rem' }}>
-                <div className="shrink-0 rounded-full border border-white/5 flex items-center justify-center text-[var(--color-white)] group-hover:border-[var(--color-accent)]/30 group-hover:text-[var(--color-accent)] transition-colors duration-500" style={{ width: '3rem', height: '3rem' }}>
-                  <LineChart strokeWidth={1.5} size={20}/>
-                </div>
-                <div>
-                  <h5 className="text-[var(--color-white)] font-semibold tracking-tight" style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>Marchés Cotés</h5>
-                  <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '1rem' }}>Contrôle drastique de la volatilité et respect strict des limites de risques imposées.</p>
+            <div className="lg:w-7/12 grid grid-cols-1" style={{ gap: '1rem', zIndex: 10 }}>
+              
+              <div className="group relative flex flex-col">
+                <div className="absolute -inset-2 rounded-[1.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-lg"></div>
+                <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-2xl p-6 transition-colors duration-500 flex items-start gap-4">
+                  <div className="shrink-0 rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500" style={{ width: '3.5rem', height: '3.5rem' }}>
+                    <LineChart strokeWidth={1.5} size={24} className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500"/>
+                  </div>
+                  <div>
+                    <h5 className="text-[var(--color-white)] font-semibold tracking-tight" style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Marchés Cotés</h5>
+                    <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '1rem' }}>Contrôle drastique de la volatilité et respect strict des limites de risques imposées.</p>
+                  </div>
                 </div>
               </div>
               
-              <div className="w-full bg-white/5" style={{ height: '1px' }}></div>
-
-              <div className="flex items-start" style={{ gap: '1.5rem' }}>
-                <div className="shrink-0 rounded-full border border-white/5 flex items-center justify-center text-[var(--color-white)] group-hover:border-[var(--color-accent)]/30 group-hover:text-[var(--color-accent)] transition-colors duration-500" style={{ width: '3rem', height: '3rem' }}>
-                  <PieChart strokeWidth={1.5} size={20}/>
+              <div className="group relative flex flex-col">
+                <div className="absolute -inset-2 rounded-[1.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-lg"></div>
+                <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-2xl p-6 transition-colors duration-500 flex items-start gap-4">
+                  <div className="shrink-0 rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500" style={{ width: '3.5rem', height: '3.5rem' }}>
+                    <PieChart strokeWidth={1.5} size={24} className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500"/>
+                  </div>
+                  <div>
+                    <h5 className="text-[var(--color-white)] font-semibold tracking-tight" style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Private Equity</h5>
+                    <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '1rem' }}>Gestion centralisée des appels de fonds et modélisation précise des cash-flows futurs.</p>
+                  </div>
                 </div>
-                <div>
-                  <h5 className="text-[var(--color-white)] font-semibold tracking-tight" style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>Private Equity</h5>
-                  <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '1rem' }}>Gestion centralisée des appels de fonds et modélisation précise des cash-flows futurs.</p>
+              </div>
+
+              <div className="group relative flex flex-col">
+                <div className="absolute -inset-2 rounded-[1.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-lg"></div>
+                <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-2xl p-6 transition-colors duration-500 flex items-start gap-4">
+                  <div className="shrink-0 rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500" style={{ width: '3.5rem', height: '3.5rem' }}>
+                    <BarChart3 strokeWidth={1.5} size={24} className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500"/>
+                  </div>
+                  <div>
+                    <h5 className="text-[var(--color-white)] font-semibold tracking-tight" style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Immobilier</h5>
+                    <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '1rem' }}>Pilotage pro-actif des conditions de crédit et consolidation globale des rendements nets.</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="w-full bg-white/5" style={{ height: '1px' }}></div>
-
-              <div className="flex items-start" style={{ gap: '1.5rem' }}>
-                <div className="shrink-0 rounded-full border border-white/5 flex items-center justify-center text-[var(--color-accent)] group-hover:border-[var(--color-accent)]/50 transition-colors duration-500" style={{ width: '3rem', height: '3rem' }}>
-                  <BarChart3 strokeWidth={1.5} size={20}/>
-                </div>
-                <div>
-                  <h5 className="text-[var(--color-white)] font-semibold tracking-tight" style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>Immobilier</h5>
-                  <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '1rem' }}>Pilotage pro-actif des conditions de crédit et consolidation globale des rendements nets.</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -223,18 +270,17 @@ const Services = () => {
           <h3 className="text-[var(--color-accent)] font-bold tracking-widest uppercase text-center" style={{ fontSize: '0.875rem', marginBottom: '1rem', marginTop: '2rem' }}>La Méthodologie</h3>
           <h4 className="font-heading text-[var(--color-white)] text-center" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', marginBottom: '3rem' }}>L'Écosystème Karantek</h4>
           
-          <div className="grid lg:grid-cols-3 relative" style={{ gap: '1.5rem', zIndex: 10 }}>
+          <div className="grid lg:grid-cols-3 relative" style={{ gap: '2rem', zIndex: 10 }}>
              {/* Step 1 */}
              <div className="group relative flex flex-col h-full">
-               <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-b from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
-               <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 overflow-hidden" style={{ padding: '2rem 2rem 2.5rem' }}>
+               <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
+               <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 p-8 overflow-hidden">
                  <div className="absolute -right-4 -bottom-4 font-heading font-bold text-white/[0.02] group-hover:text-[var(--color-accent)]/[0.08] transition-colors duration-500 pointer-events-none" style={{ fontSize: '8rem' }}>01</div>
-                 <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center group-hover:border-[var(--color-accent)]/30 transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
-                   <ShieldCheck className="text-[var(--color-accent)]" strokeWidth={1.5} size={28}/>
+                 <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
+                   <ShieldCheck className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} size={28}/>
                  </div>
-                 <h5 className="text-[var(--color-white)] font-semibold tracking-tight relative" style={{ fontSize: '1.35rem', marginBottom: '0.75rem', zIndex: 10 }}>Posture Protectrice</h5>
-                 <div className="bg-[var(--color-accent)] opacity-50 relative" style={{ width: '2rem', height: '1px', marginBottom: '1rem', zIndex: 10 }}></div>
-                 <p className="text-[var(--color-text-muted)] font-light leading-relaxed relative" style={{ fontSize: '0.95rem', zIndex: 10 }}>
+                 <h5 className="text-[var(--color-white)] font-semibold tracking-tight relative" style={{ fontSize: '1.35rem', marginBottom: '1rem', zIndex: 10 }}>Posture Protectrice</h5>
+                 <p className="text-[var(--color-text-muted)] font-light leading-relaxed relative flex-grow" style={{ fontSize: '1rem', zIndex: 10 }}>
                    Proximité stratégique d'un Family Office dédiée exclusivement à vos intérêts.
                  </p>
                </div>
@@ -242,15 +288,14 @@ const Services = () => {
 
              {/* Step 2 */}
              <div className="group relative flex flex-col h-full">
-               <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-b from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
-               <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 overflow-hidden" style={{ padding: '2rem 2rem 2.5rem' }}>
+               <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
+               <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 p-8 overflow-hidden">
                  <div className="absolute -right-4 -bottom-4 font-heading font-bold text-white/[0.02] group-hover:text-[var(--color-accent)]/[0.08] transition-colors duration-500 pointer-events-none" style={{ fontSize: '8rem' }}>02</div>
-                 <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center group-hover:border-[var(--color-accent)]/30 transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
-                   <Layers className="text-[var(--color-accent)]" strokeWidth={1.5} size={28}/>
+                 <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
+                   <Layers className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} size={28}/>
                  </div>
-                 <h5 className="text-[var(--color-white)] font-semibold tracking-tight relative" style={{ fontSize: '1.35rem', marginBottom: '0.75rem', zIndex: 10 }}>Sélection Ouverte</h5>
-                 <div className="bg-[var(--color-accent)] opacity-50 relative" style={{ width: '2rem', height: '1px', marginBottom: '1rem', zIndex: 10 }}></div>
-                 <p className="text-[var(--color-text-muted)] font-light leading-relaxed relative" style={{ fontSize: '0.95rem', zIndex: 10 }}>
+                 <h5 className="text-[var(--color-white)] font-semibold tracking-tight relative" style={{ fontSize: '1.35rem', marginBottom: '1rem', zIndex: 10 }}>Sélection Ouverte</h5>
+                 <p className="text-[var(--color-text-muted)] font-light leading-relaxed relative flex-grow" style={{ fontSize: '1rem', zIndex: 10 }}>
                    Sélection des meilleurs opérateurs mondiaux sans aucun biais d'affiliation.
                  </p>
                </div>
@@ -258,15 +303,14 @@ const Services = () => {
 
              {/* Step 3 */}
              <div className="group relative flex flex-col h-full">
-               <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-b from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
-               <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 overflow-hidden" style={{ padding: '2rem 2rem 2.5rem' }}>
+               <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/0 group-hover:from-[var(--color-accent)]/5 group-hover:to-transparent transition-all duration-700 blur-xl"></div>
+               <div className="relative bg-[#161616]/40 backdrop-blur-md border border-white/5 group-hover:border-[var(--color-accent)]/30 rounded-[2rem] flex-grow flex flex-col transition-colors duration-500 p-8 overflow-hidden">
                  <div className="absolute -right-4 -bottom-4 font-heading font-bold text-white/[0.02] group-hover:text-[var(--color-accent)]/[0.08] transition-colors duration-500 pointer-events-none" style={{ fontSize: '8rem' }}>03</div>
-                 <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-center group-hover:border-[var(--color-accent)]/30 transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
-                   <Target className="text-[var(--color-accent)]" strokeWidth={1.5} size={28}/>
+                 <div className="rounded-2xl bg-white/[0.03] border border-white/[0.08] group-hover:border-[var(--color-accent)]/30 flex items-center justify-center transition-colors duration-500 relative" style={{ width: '3.5rem', height: '3.5rem', marginBottom: '1.5rem', zIndex: 10 }}>
+                   <Target className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} size={28}/>
                  </div>
-                 <h5 className="text-[var(--color-white)] font-semibold tracking-tight relative" style={{ fontSize: '1.35rem', marginBottom: '0.75rem', zIndex: 10 }}>Consolidation</h5>
-                 <div className="bg-[var(--color-accent)] opacity-50 relative" style={{ width: '2rem', height: '1px', marginBottom: '1rem', zIndex: 10 }}></div>
-                 <p className="text-[var(--color-text-muted)] font-light leading-relaxed relative" style={{ fontSize: '0.95rem', zIndex: 10 }}>
+                 <h5 className="text-[var(--color-white)] font-semibold tracking-tight relative" style={{ fontSize: '1.35rem', marginBottom: '1rem', zIndex: 10 }}>Consolidation</h5>
+                 <p className="text-[var(--color-text-muted)] font-light leading-relaxed relative flex-grow" style={{ fontSize: '1rem', zIndex: 10 }}>
                    Agrégation comptable pointue via notre ingénierie de reporting sur-mesure.
                  </p>
                </div>
