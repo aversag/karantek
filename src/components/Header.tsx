@@ -38,77 +38,80 @@ const Header = () => {
             </a>
             
             {/* Desktop Dropdown */}
-            <div className="absolute top-[calc(100%+1.5rem)] right-0 w-[800px] lg:w-[1000px] bg-[#0A0F1C]/85 backdrop-blur-3xl border border-white/5 rounded-[2.5rem] p-16 lg:p-24 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 translate-y-4 group-hover:translate-y-0 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.05)] z-50 hidden md:block before:absolute before:-top-10 before:left-0 before:w-full before:h-10">
+            <div 
+              style={{ padding: '64px', maxWidth: '850px' }}
+              className="fixed top-[80px] left-1/2 -translate-x-1/2 w-[90vw] bg-[#101830]/95 backdrop-blur-2xl border border-[rgba(255,255,255,0.08)] rounded-[2rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 translate-y-2 group-hover:translate-y-0 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.05)] z-50 hidden md:block before:absolute before:-top-6 before:left-0 before:w-full before:h-6"
+            >
               
-              <div className="grid grid-cols-3 gap-x-16 gap-y-16">
-                <a href="#offre" className="flex flex-col items-start gap-5 p-6 rounded-[2rem] transition-all duration-300 hover:bg-white/[0.02] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#0A0F1C] border border-white/[0.05] text-white/40 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/20 transition-all duration-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
-                    <Target size={26} strokeWidth={1.2} />
+              <div style={{ columnGap: '64px', rowGap: '40px' }} className="grid grid-cols-2">
+                <a href="#offre" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
+                    <Target size={20} strokeWidth={1.5} />
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-[17px] font-medium text-white mb-2 group-hover/item:text-[var(--color-accent)] transition-colors duration-300">Approche Globale</span>
-                    <p className="text-[14px] text-white/40 leading-relaxed font-light">
-                      Une vision 360° pour une stratégie sur-mesure et pérenne.
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Approche Globale</span>
+                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
+                      Vision 360° pour une stratégie sur-mesure.
                     </p>
                   </div>
                 </a>
 
-                <a href="#investissement-cote" className="flex flex-col items-start gap-5 p-6 rounded-[2rem] transition-all duration-300 hover:bg-white/[0.02] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#0A0F1C] border border-white/[0.05] text-white/40 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/20 transition-all duration-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
-                    <TrendingUp size={26} strokeWidth={1.2} />
+                <a href="#investissement-cote" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
+                    <TrendingUp size={20} strokeWidth={1.5} />
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-[17px] font-medium text-white mb-2 group-hover/item:text-[var(--color-accent)] transition-colors duration-300">Investissement Coté</span>
-                    <p className="text-[14px] text-white/40 leading-relaxed font-light">
-                      Accédez aux marchés avec une gestion parfaitement transparente.
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Investissement Coté</span>
+                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
+                      Gestion transparente sur les marchés.
                     </p>
                   </div>
                 </a>
 
-                <a href="#investissement-immobilier" className="flex flex-col items-start gap-5 p-6 rounded-[2rem] transition-all duration-300 hover:bg-white/[0.02] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#0A0F1C] border border-white/[0.05] text-white/40 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/20 transition-all duration-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
-                    <Building size={26} strokeWidth={1.2} />
+                <a href="#investissement-immobilier" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
+                    <Building size={20} strokeWidth={1.5} />
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-[17px] font-medium text-white mb-2 group-hover/item:text-[var(--color-accent)] transition-colors duration-300">Immobilier</span>
-                    <p className="text-[14px] text-white/40 leading-relaxed font-light">
-                      Opportunités tangibles choisies rigoureusement pour leur rendement.
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Immobilier</span>
+                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
+                      Opportunités tangibles à haut rendement.
                     </p>
                   </div>
                 </a>
 
-                <a href="#investissement-non-cote" className="flex flex-col items-start gap-5 p-6 rounded-[2rem] transition-all duration-300 hover:bg-white/[0.02] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#0A0F1C] border border-white/[0.05] text-white/40 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/20 transition-all duration-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
-                    <Rocket size={26} strokeWidth={1.2} />
+                <a href="#investissement-non-cote" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
+                    <Rocket size={20} strokeWidth={1.5} />
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-[17px] font-medium text-white mb-2 group-hover/item:text-[var(--color-accent)] transition-colors duration-300">Non Coté</span>
-                    <p className="text-[14px] text-white/40 leading-relaxed font-light">
-                      Diversifiez vos actifs en soutenant activement l'économie réelle.
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Non Coté</span>
+                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
+                      Diversification dans l'économie réelle.
                     </p>
                   </div>
                 </a>
 
-                <a href="#suivi-reporting" className="flex flex-col items-start gap-5 p-6 rounded-[2rem] transition-all duration-300 hover:bg-white/[0.02] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#0A0F1C] border border-white/[0.05] text-white/40 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/20 transition-all duration-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
-                    <BarChart3 size={26} strokeWidth={1.2} />
+                <a href="#suivi-reporting" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
+                    <BarChart3 size={20} strokeWidth={1.5} />
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-[17px] font-medium text-white mb-2 group-hover/item:text-[var(--color-accent)] transition-colors duration-300">Suivi & Reporting</span>
-                    <p className="text-[14px] text-white/40 leading-relaxed font-light">
-                      Un accompagnement continu et des rapports précis et détaillés.
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Suivi & Reporting</span>
+                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
+                      Rapports précis et accompagnement continu.
                     </p>
                   </div>
                 </a>
 
-                <a href="#synthese" className="flex flex-col items-start gap-5 p-6 rounded-[2rem] transition-all duration-300 hover:bg-white/[0.02] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#0A0F1C] border border-white/[0.05] text-white/40 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/20 transition-all duration-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]">
-                    <LayoutDashboard size={26} strokeWidth={1.2} />
+                <a href="#synthese" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
+                    <LayoutDashboard size={20} strokeWidth={1.5} />
                   </div>
-                  <div className="flex flex-col">
-                    <span className="text-[17px] font-medium text-white mb-2 group-hover/item:text-[var(--color-accent)] transition-colors duration-300">Synthèse Globale</span>
-                    <p className="text-[14px] text-white/40 leading-relaxed font-light">
-                      Une vue d'ensemble claire pour prendre vos décisions en toute confiance.
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Synthèse Globale</span>
+                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
+                      Vue d'ensemble pour décider en confiance.
                     </p>
                   </div>
                 </a>

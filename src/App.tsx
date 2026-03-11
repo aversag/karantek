@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Expertise from './components/Expertise';
 import Values from './components/Values';
 import Services from './components/Services';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Expertise />
         <Values />
         <Services />
+        <Contact />
       </main>
       <Footer />
     </div>

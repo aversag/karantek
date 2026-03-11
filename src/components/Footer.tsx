@@ -23,7 +23,15 @@ const Footer = () => {
               </li>
               <li>
                 <Mail size={18} className="contact-icon" />
-                <a href="mailto:r.guitelmacher@karantek.fr">r.guitelmacher@karantek.fr</a>
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = `mailto:${"r.guitelmacher"}@${"karantek.fr"}`;
+                  }}
+                >
+                  {`r.guitelmacher@${"karantek.fr"}`}
+                </a>
               </li>
               <li>
                 <MapPin size={18} className="contact-icon" />

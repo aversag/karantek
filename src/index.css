@@ -1,22 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
+/* --- TAILWIND JIT WORKAROUND --- */
+/* Forcing critical spacing classes that are dropped by the compiler */
+.py-24 { padding-top: 6rem !important; padding-bottom: 6rem !important; }
+.mb-10 { margin-bottom: 2.5rem !important; }
+.mb-16 { margin-bottom: 4rem !important; }
+.mb-20 { margin-bottom: 5rem !important; }
+.mb-24 { margin-bottom: 6rem !important; }
+.mb-32 { margin-bottom: 8rem !important; }
+.gap-8 { gap: 2rem !important; }
+.gap-12 { gap: 3rem !important; }
+.gap-16 { gap: 4rem !important; }
+.p-10 { padding: 2.5rem !important; }
+.pt-16 { padding-top: 4rem !important; }
+
+@media (min-width: 1024px) {
+  .lg\:py-32 { padding-top: 8rem !important; padding-bottom: 8rem !important; }
+  .lg\:gap-12 { gap: 3rem !important; }
+  .lg\:gap-20 { gap: 5rem !important; }
+  .lg\:gap-24 { gap: 6rem !important; }
+  .lg\:p-12 { padding: 3rem !important; }
+}
+
+@media (min-width: 1280px) {
+  .xl\:gap-12 { gap: 3rem !important; }
+}
+/* ------------------------------- */
+
 :root {
-  --color-bg: #0A0F24;
+  --color-bg: #0a0f24;
   --color-bg-alt: #101830;
-  --color-text: #F3F4F6;
-  --color-text-muted: #9CA3AF;
-  --color-accent: #EB5E28;
-  --color-accent-hover: #FF7B47;
+  --color-text: #f3f4f6;
+  --color-text-muted: #9ca3af;
+  --color-accent: #eb5e28;
+  --color-accent-hover: #ff7b47;
   --color-white: #ffffff;
-  
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Outfit', sans-serif;
-  
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Outfit", sans-serif;
+
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-blur: blur(16px);
-  
+
   --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -52,7 +79,12 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 500;
   line-height: 1.2;
@@ -85,7 +117,12 @@ button {
 
 .section-title {
   font-size: 2.5rem;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #FFA882 50%, var(--color-accent) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    #ffa882 50%,
+    var(--color-accent) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -95,7 +132,7 @@ button {
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -131,7 +168,9 @@ button {
   background: rgba(255, 255, 255, 0.05);
   transform: translateY(-5px) scale(1.01);
   border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(194, 154, 74, 0.05);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(194, 154, 74, 0.05);
 }
 
 /* Buttons */
@@ -149,13 +188,17 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-accent), #B33D14);
+  background: linear-gradient(135deg, var(--color-accent), #b33d14);
   color: var(--color-bg);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--color-accent-hover), var(--color-accent));
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-hover),
+    var(--color-accent)
+  );
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(194, 154, 74, 0.3);
 }
@@ -186,7 +229,9 @@ button {
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in.visible {
@@ -194,9 +239,15 @@ button {
   transform: translateY(0);
 }
 
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
+.delay-1 {
+  transition-delay: 0.1s;
+}
+.delay-2 {
+  transition-delay: 0.2s;
+}
+.delay-3 {
+  transition-delay: 0.3s;
+}
 
 /* ======== HEADER ======== */
 .header {
@@ -244,7 +295,7 @@ button {
 }
 
 .nav-item::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -304,20 +355,28 @@ button {
 .sphere-2 {
   width: 800px;
   height: 800px;
-  background: #1B294B;
+  background: #1b294b;
   bottom: -200px;
   left: -200px;
   animation: float-alt 25s infinite alternate;
 }
 
 @keyframes float {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-100px, 100px) scale(1.2); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-100px, 100px) scale(1.2);
+  }
 }
 
 @keyframes float-alt {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(100px, -100px) scale(1.1); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(100px, -100px) scale(1.1);
+  }
 }
 
 .hero-content {
@@ -404,7 +463,7 @@ button {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-accent), #8C2B0B);
+  background: linear-gradient(135deg, var(--color-accent), #8c2b0b);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -439,7 +498,7 @@ button {
 }
 
 .experience-timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 6px;
   top: 0;
@@ -636,6 +695,60 @@ blockquote footer {
   font-size: 0.95rem;
 }
 
+/* ======== CONTACT ======== */
+.contact-section {
+  position: relative;
+  background-color: var(--color-bg-alt);
+}
+
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--color-white);
+  font-family: inherit;
+  transition: var(--transition-smooth);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-form .submit-btn {
+  width: 100%;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
 /* ======== FOOTER ======== */
 .site-footer {
   padding: 6rem 0 2rem;
@@ -645,7 +758,7 @@ blockquote footer {
 }
 
 .site-footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
@@ -677,7 +790,7 @@ blockquote footer {
   font-size: 1.2rem;
 }
 
-.footer-contact h3, 
+.footer-contact h3,
 .footer-legal h3 {
   color: var(--color-white);
   font-size: 1.2rem;
@@ -708,7 +821,7 @@ blockquote footer {
   color: var(--color-accent);
 }
 
-.footer-legal p, 
+.footer-legal p,
 .legal-links a {
   color: var(--color-text-muted);
 }
@@ -735,20 +848,20 @@ blockquote footer {
   .hero-text .title {
     font-size: 3.5rem;
   }
-  
+
   .expertise-content {
     grid-template-columns: 1fr;
   }
-  
+
   .founder-card {
     margin-top: 2rem;
   }
-  
+
   .values-grid,
   .approach-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -758,7 +871,7 @@ blockquote footer {
   .section {
     padding: 5rem 0;
   }
-  
+
   .header-content {
     position: relative;
   }
@@ -812,7 +925,7 @@ blockquote footer {
     opacity: 1;
     visibility: visible;
   }
-  
+
   .mobile-menu-btn {
     display: block;
   }
