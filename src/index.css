@@ -235,14 +235,17 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem 0;
+  padding: calc(1.5rem + env(safe-area-inset-top, 0px)) 0 1.5rem;
   z-index: 1000;
   transition: var(--transition-smooth);
 }
 
-.header.scrolled {
-  background: var(--color-bg);
-  padding: 1rem 0;
+.header.scrolled,
+.header.menu-open {
+  background: rgba(10, 15, 36, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: calc(1rem + env(safe-area-inset-top, 0px)) 0 1rem;
   border-bottom: 1px solid var(--glass-border);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
@@ -786,7 +789,7 @@ blockquote footer {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(10, 15, 36, 0.98);
+    background: var(--color-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;

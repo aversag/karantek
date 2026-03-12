@@ -46,7 +46,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${isScrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container header-content">
         <Link to="/" className={`logo flex items-center transition-all duration-300 ease-out ${isScrolled ? 'gap-0' : 'gap-2'}`}>
           <img src="/logo-karentek.png" alt="Logo Karantek" className="h-8 md:h-10 w-auto" />
