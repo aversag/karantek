@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Target, TrendingUp, Building, Rocket, BarChart3, LayoutDashboard } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,17 +48,17 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
-        <a href="#" className={`logo flex items-center transition-all duration-300 ease-out ${isScrolled ? 'gap-0' : 'gap-2'}`}>
+        <Link to="/" className={`logo flex items-center transition-all duration-300 ease-out ${isScrolled ? 'gap-0' : 'gap-2'}`}>
           <img src="/logo-karentek.png" alt="Logo Karantek" className="h-8 md:h-10 w-auto" />
           <span className={`overflow-hidden transition-all duration-300 ease-out whitespace-nowrap origin-left ${isScrolled ? 'max-w-0 opacity-0' : 'max-w-[150px] opacity-100'}`}>KARANTEK</span>
-        </a>
+        </Link>
         
         <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <a href="#expertise" className={`nav-item ${activeSection === 'expertise' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Expertise</a>
-          <a href="#valeurs" className={`nav-item ${activeSection === 'valeurs' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Valeurs</a>
+          <Link to="/#expertise" className={`nav-item ${activeSection === 'expertise' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Expertise</Link>
+          <Link to="/#valeurs" className={`nav-item ${activeSection === 'valeurs' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Valeurs</Link>
           
           <div className="relative group w-full md:w-auto">
-            <a href="#offre" className={`nav-item flex items-center justify-between md:justify-start gap-1 w-full md:w-auto ${['offre', 'investissement-cote', 'investissement-immobilier', 'investissement-non-cote', 'suivi-reporting', 'synthese'].includes(activeSection) ? 'active' : ''}`} onClick={(e) => {
+            <Link to="/#offre" className={`nav-item flex items-center justify-between md:justify-start gap-1 w-full md:w-auto ${['offre', 'investissement-cote', 'investissement-immobilier', 'investissement-non-cote', 'suivi-reporting', 'synthese'].includes(activeSection) ? 'active' : ''}`} onClick={(e) => {
               if (window.innerWidth < 768) {
                 e.preventDefault();
                 setIsOffresOpenMobile(!isOffresOpenMobile);
@@ -66,7 +67,7 @@ const Header = () => {
               }
             }}>
               Offres <ChevronDown size={14} className={`transition-transform duration-300 md:group-hover:rotate-180 ${isOffresOpenMobile ? 'rotate-180' : ''}`} />
-            </a>
+            </Link>
             
             {/* Desktop Dropdown */}
             <div 
@@ -75,7 +76,7 @@ const Header = () => {
             >
               
               <div style={{ columnGap: '64px', rowGap: '40px' }} className="grid grid-cols-2">
-                <a href="#offre" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/#offre" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
                   <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
                     <Target size={20} strokeWidth={1.5} />
                   </div>
@@ -85,9 +86,9 @@ const Header = () => {
                       Vision 360° pour une stratégie sur-mesure.
                     </p>
                   </div>
-                </a>
+                </Link>
 
-                <a href="#investissement-cote" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/#investissement-cote" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
                   <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
                     <TrendingUp size={20} strokeWidth={1.5} />
                   </div>
@@ -97,9 +98,9 @@ const Header = () => {
                       Gestion transparente sur les marchés.
                     </p>
                   </div>
-                </a>
+                </Link>
 
-                <a href="#investissement-immobilier" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/#investissement-immobilier" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
                   <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
                     <Building size={20} strokeWidth={1.5} />
                   </div>
@@ -109,9 +110,9 @@ const Header = () => {
                       Opportunités tangibles à haut rendement.
                     </p>
                   </div>
-                </a>
+                </Link>
 
-                <a href="#investissement-non-cote" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/#investissement-non-cote" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
                   <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
                     <Rocket size={20} strokeWidth={1.5} />
                   </div>
@@ -121,9 +122,9 @@ const Header = () => {
                       Diversification dans l'économie réelle.
                     </p>
                   </div>
-                </a>
+                </Link>
 
-                <a href="#suivi-reporting" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/#suivi-reporting" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
                   <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
                     <BarChart3 size={20} strokeWidth={1.5} />
                   </div>
@@ -133,9 +134,9 @@ const Header = () => {
                       Rapports précis et accompagnement continu.
                     </p>
                   </div>
-                </a>
+                </Link>
 
-                <a href="#synthese" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/#synthese" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
                   <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
                     <LayoutDashboard size={20} strokeWidth={1.5} />
                   </div>
@@ -145,24 +146,24 @@ const Header = () => {
                       Vue d'ensemble pour décider en confiance.
                     </p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
 
             {/* Mobile nested links - only visible on mobile when menu is open */}
             <div className={`flex-col pl-4 mt-2 space-y-4 border-l-2 border-[rgba(255,255,255,0.1)] md:hidden overflow-hidden transition-all duration-300 ${isOffresOpenMobile ? 'max-h-[500px] opacity-100 flex pb-4' : 'max-h-0 opacity-0 hidden'}`}>
-              <a href="#offre" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Approche Globale</a>
-              <a href="#investissement-cote" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Investissement Coté</a>
-              <a href="#investissement-immobilier" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Investissement Immobilier</a>
-              <a href="#investissement-non-cote" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Investissement Non Coté</a>
-              <a href="#suivi-reporting" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Suivi et Reporting</a>
-              <a href="#synthese" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Synthèse</a>
+              <Link to="/#offre" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Approche Globale</Link>
+              <Link to="/#investissement-cote" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Investissement Coté</Link>
+              <Link to="/#investissement-immobilier" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Investissement Immobilier</Link>
+              <Link to="/#investissement-non-cote" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Investissement Non Coté</Link>
+              <Link to="/#suivi-reporting" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Suivi et Reporting</Link>
+              <Link to="/#synthese" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Synthèse</Link>
             </div>
           </div>
 
-          <a href="#contact" className="btn btn-glass mt-4 md:mt-0" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/#contact" className="btn btn-glass mt-4 md:mt-0" onClick={() => setIsMenuOpen(false)}>
             Nous Contacter
-          </a>
+          </Link>
         </nav>
 
         <button 

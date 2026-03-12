@@ -1,5 +1,5 @@
-
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -53,11 +53,10 @@ const Footer = () => {
 
           <div className="footer-legal fade-in delay-3">
             <h3>Mentions Légales</h3>
-            <p>Numéro Orias : <strong>22005549</strong></p>
-            <div className="legal-links mt-4">
-              <a href="#">Politique de confidentialité</a>
-              <br />
-              <a href="#">Conditions générales d'utilisation</a>
+            <div className="flex flex-col gap-4">
+              <p>Numéro Orias : <strong>22005549</strong></p>
+              <Link to="/politique-de-confidentialite">Politique de confidentialité</Link>
+              <Link to="/conditions-generales-utilisation">Conditions générales d'utilisation</Link>
             </div>
           </div>
         </div>

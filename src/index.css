@@ -723,16 +723,15 @@ blockquote footer {
 }
 
 .footer-legal p,
-.legal-links a {
+.footer-legal a {
   color: var(--color-text-muted);
 }
 
-.legal-links a {
-  display: inline-block;
-  margin-bottom: 0.5rem;
+.footer-legal a {
+  transition: color var(--transition-fast);
 }
 
-.legal-links a:hover {
+.footer-legal a:hover {
   color: var(--color-white);
 }
 
