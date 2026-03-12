@@ -16,7 +16,7 @@ const Expertise = () => {
               nationaux (SGPA, Sycomore Family Office), j'ai décidé de créer Karantek.
             </p>
             <p className="highlight-text">
-              Karantek est un family office qui propose des solutions innovantes, se 
+              Karantek est un cabinet de Conseil en Gestion de Patrimoine qui propose des solutions innovantes, se
               différenciant de l'offre classique des banques privées.
             </p>
             <p>

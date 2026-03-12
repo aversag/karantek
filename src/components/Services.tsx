@@ -214,7 +214,7 @@ const Services = () => {
                  <ShieldCheck className="value-icon" strokeWidth={1.5} size={28} />
                </div>
                <h3 className="relative z-10">Posture Protectrice</h3>
-               <p className="flex-grow relative z-10">Proximité stratégique d'un Family Office dédiée exclusivement à vos intérêts.</p>
+               <p className="flex-grow relative z-10">Proximité stratégique d'un Conseiller en Gestion de Patrimoine dédiée exclusivement à vos intérêts.</p>
              </div>
 
              {/* Step 2 */}

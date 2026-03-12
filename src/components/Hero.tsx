@@ -11,7 +11,7 @@ const Hero = () => {
       
       <div className="container hero-content">
         <div className="hero-text glass-panel fade-in delay-1">
-          <span className="subtitle">Family Office</span>
+          <span className="subtitle">Conseiller en Gestion de Patrimoine</span>
           <h1 className="title">
             Karantek
             <br />

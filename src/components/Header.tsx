@@ -47,9 +47,9 @@ const Header = () => {
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
-        <a href="#" className="logo flex items-center gap-2">
+        <a href="#" className={`logo flex items-center transition-all duration-300 ease-out ${isScrolled ? 'gap-0' : 'gap-2'}`}>
           <img src="/logo-karentek.png" alt="Logo Karantek" className="h-8 md:h-10 w-auto" />
-          <span>KARANTEK</span>
+          <span className={`overflow-hidden transition-all duration-300 ease-out whitespace-nowrap origin-left ${isScrolled ? 'max-w-0 opacity-0' : 'max-w-[150px] opacity-100'}`}>KARANTEK</span>
         </a>
         
         <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
