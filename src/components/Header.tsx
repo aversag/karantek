@@ -54,8 +54,8 @@ const Header = () => {
         </Link>
         
         <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <Link to="/#expertise" className={`nav-item ${activeSection === 'expertise' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Expertise</Link>
-          <Link to="/#valeurs" className={`nav-item ${activeSection === 'valeurs' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Valeurs</Link>
+          <Link to="/#expertise" className={`nav-item mobile-nav-main ${activeSection === 'expertise' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Expertise</Link>
+          <Link to="/#valeurs" className={`nav-item mobile-nav-main ${activeSection === 'valeurs' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Valeurs</Link>
           
           <div className="relative group w-full md:w-auto">
             <Link to="/#offre" className={`nav-item flex items-center justify-between md:justify-start gap-1 w-full md:w-auto ${['offre', 'investissement-cote', 'investissement-immobilier', 'investissement-non-cote', 'suivi-reporting', 'synthese'].includes(activeSection) ? 'active' : ''}`} onClick={(e) => {
@@ -66,7 +66,7 @@ const Header = () => {
                 setIsMenuOpen(false);
               }
             }}>
-              Offres <ChevronDown size={14} className={`transition-transform duration-300 md:group-hover:rotate-180 ${isOffresOpenMobile ? 'rotate-180' : ''}`} />
+              Offres <ChevronDown size={16} className={`transition-transform duration-300 md:group-hover:rotate-180 ${isOffresOpenMobile ? 'rotate-180' : ''}`} />
             </Link>
             
             {/* Desktop Dropdown */}
@@ -151,17 +151,17 @@ const Header = () => {
             </div>
 
             {/* Mobile nested links - only visible on mobile when menu is open */}
-            <div className={`flex-col pl-4 mt-2 space-y-4 border-l-2 border-[rgba(255,255,255,0.1)] md:hidden overflow-hidden transition-all duration-300 ${isOffresOpenMobile ? 'max-h-[500px] opacity-100 flex pb-4' : 'max-h-0 opacity-0 hidden'}`}>
-              <Link to="/#offre" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Approche Globale</Link>
-              <Link to="/#investissement-cote" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Investissement Coté</Link>
-              <Link to="/#investissement-immobilier" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Investissement Immobilier</Link>
-              <Link to="/#investissement-non-cote" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Investissement Non Coté</Link>
-              <Link to="/#suivi-reporting" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Suivi et Reporting</Link>
-              <Link to="/#synthese" className="text-[15px] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors py-1 block" onClick={() => setIsMenuOpen(false)}>Synthèse</Link>
+            <div className={`flex-col pl-4 mt-2 space-y-3 border-l-2 border-[var(--color-accent)]/30 md:hidden overflow-hidden transition-all duration-300 ${isOffresOpenMobile ? 'max-h-[500px] opacity-100 flex pb-4' : 'max-h-0 opacity-0 hidden'}`}>
+              <Link to="/#offre" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Approche Globale</Link>
+              <Link to="/#investissement-cote" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Investissement Coté</Link>
+              <Link to="/#investissement-immobilier" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Immobilier</Link>
+              <Link to="/#investissement-non-cote" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Non Coté</Link>
+              <Link to="/#suivi-reporting" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Suivi & Reporting</Link>
+              <Link to="/#synthese" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Synthèse</Link>
             </div>
           </div>
 
-          <Link to="/#contact" className="btn btn-glass mt-4 md:mt-0" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/#contact" className="btn btn-accent mt-6 md:mt-0" onClick={() => setIsMenuOpen(false)}>
             Nous Contacter
           </Link>
         </nav>
