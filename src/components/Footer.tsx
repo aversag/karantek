@@ -6,12 +6,15 @@ const Footer = () => {
     <footer id="contact" className="site-footer">
       <div className="container">
         <div className="footer-grid">
-          <div className="footer-brand fade-in delay-1">
-            <h2>KARANTEK</h2>
-            <p className="subtitle">Stratégies d'Investissements</p>
-            <p className="description mt-4">
-              Des solutions innovantes et sur-mesure pour donner vie à vos convictions dans un cadre optimal et performant.
-            </p>
+          <div className="footer-brand fade-in delay-1 flex items-start gap-4">
+            <img src="/logo-karentek.png" alt="Logo Karantek" className="h-[75px] md:h-[90px] w-auto mt-1" />
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold tracking-widest text-white mb-1">KARANTEK</span>
+              <p className="subtitle">Stratégies d'Investissements</p>
+              <p className="description mt-3">
+                Des solutions innovantes et sur-mesure pour donner vie à vos convictions dans un cadre optimal et performant.
+              </p>
+            </div>
           </div>
 
           <div className="footer-contact fade-in delay-2">
