@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Target, TrendingUp, Building, Rocket, BarChart3, LayoutDashboard } from 'lucide-react';
+import { Menu, X, ChevronDown, Target, TrendingUp, Rocket, BarChart3, LayoutDashboard } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -34,7 +34,7 @@ const Header = () => {
     const sections = document.querySelectorAll('section[id], div[id]');
     const relevantIds = [
       'hero', 'expertise', 'valeurs', 'offre', 'contact', 'contact-form',
-      'investissement-cote', 'investissement-immobilier', 'investissement-non-cote', 'suivi-reporting', 'synthese'
+      'investissement-cote', 'investissement-non-cote', 'suivi-reporting', 'synthese'
     ];
     sections.forEach((section) => {
       if (relevantIds.includes(section.id)) {
@@ -58,7 +58,7 @@ const Header = () => {
           <Link to="/#valeurs" className={`nav-item mobile-nav-main ${activeSection === 'valeurs' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Valeurs</Link>
           
           <div className="relative group w-full md:w-auto">
-            <Link to="/#offre" className={`nav-item flex items-center justify-between md:justify-start gap-1 w-full md:w-auto ${['offre', 'investissement-cote', 'investissement-immobilier', 'investissement-non-cote', 'suivi-reporting', 'synthese'].includes(activeSection) ? 'active' : ''}`} onClick={(e) => {
+            <Link to="/#offre" className={`nav-item flex items-center justify-between md:justify-start gap-1 w-full md:w-auto ${['offre', 'investissement-cote', 'investissement-non-cote', 'suivi-reporting', 'synthese'].includes(activeSection) ? 'active' : ''}`} onClick={(e) => {
               if (window.innerWidth < 768) {
                 e.preventDefault();
                 setIsOffresOpenMobile(!isOffresOpenMobile);
@@ -100,24 +100,12 @@ const Header = () => {
                   </div>
                 </Link>
 
-                <Link to="/#investissement-immobilier" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
-                    <Building size={20} strokeWidth={1.5} />
-                  </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Immobilier</span>
-                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
-                      Opportunités tangibles à haut rendement.
-                    </p>
-                  </div>
-                </Link>
-
                 <Link to="/#investissement-non-cote" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
                   <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
                     <Rocket size={20} strokeWidth={1.5} />
                   </div>
                   <div className="flex flex-col min-w-0">
-                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Non Coté</span>
+                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Non Coté & Immobilier</span>
                     <p className="text-[13px] text-white/40 leading-relaxed mt-1">
                       Diversification dans l'économie réelle.
                     </p>
@@ -154,10 +142,9 @@ const Header = () => {
             <div className={`flex-col pl-4 mt-2 space-y-3 border-l-2 border-[var(--color-accent)]/30 md:hidden overflow-hidden transition-all duration-300 ${isOffresOpenMobile ? 'max-h-[500px] opacity-100 flex pb-4' : 'max-h-0 opacity-0 hidden'}`}>
               <Link to="/#offre" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Approche Globale</Link>
               <Link to="/#investissement-cote" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Investissement Coté</Link>
-              <Link to="/#investissement-immobilier" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Immobilier</Link>
-              <Link to="/#investissement-non-cote" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Non Coté</Link>
+              <Link to="/#investissement-non-cote" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Non Coté & Immobilier</Link>
               <Link to="/#suivi-reporting" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Suivi & Reporting</Link>
-              <Link to="/#synthese" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Synthèse</Link>
+              <Link to="/#synthese" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Synthèse Globale</Link>
             </div>
           </div>
 

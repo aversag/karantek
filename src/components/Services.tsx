@@ -52,8 +52,8 @@ const Services = () => {
         {/* Citation */}
         <div className="fade-in text-left" style={{ marginBottom: '8rem', paddingTop: '2rem', paddingBottom: '2rem' }}>
           <blockquote className="italic text-[var(--color-white)] max-w-4xl mx-auto font-light leading-snug text-left" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 1.875rem)' }}>
-            &quot;Que la stratégie soit belle, <br />
-            mais n'oubliez pas de regarder le résultat.&quot;
+            &quot;Si belle que soit la stratégie, <br />
+            il faut de temps en temps regarder les résultats.&quot;
             <footer className="text-[var(--color-accent)] font-semibold tracking-widest uppercase text-left" style={{ fontSize: '0.875rem', marginTop: '2rem' }}>— Winston Churchill</footer>
           </blockquote>
         </div>
@@ -66,7 +66,7 @@ const Services = () => {
           <div className="flex flex-col items-start max-w-6xl mx-auto" style={{ marginTop: '4rem' }}>
             {/* Title Section */}
             <div className="w-full flex flex-col items-start text-left max-w-3xl" style={{ zIndex: 10, marginBottom: '2.5rem' }}>
-              <h3 className="text-[var(--color-accent)] font-bold tracking-widest uppercase" style={{ fontSize: '0.875rem', marginBottom: '1rem' }}>Les Marchés Publics</h3>
+              <h3 className="text-[var(--color-accent)] font-bold tracking-widest uppercase" style={{ fontSize: '0.875rem', marginBottom: '1rem' }}>Les Marchés Cotés</h3>
               <h4 className="font-heading text-[var(--color-white)] leading-tight" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', marginBottom: '1.5rem' }}>L'Investissement Coté</h4>
               <p className="text-[var(--color-text-muted)] font-light leading-relaxed" style={{ fontSize: '17px' }}>
                 Une approche rigoureuse et adaptable pour naviguer sereinement sur les marchés financiers.
@@ -98,7 +98,6 @@ const Services = () => {
 
         {/* --- Section 3: Actifs Privés (Non Coté & Immobilier) --- */}
         <div id="investissement-non-cote" style={{ scrollMarginTop: '8rem' }}></div>
-        <div id="investissement-immobilier" style={{ scrollMarginTop: '8rem' }}></div>
         
         <div className="fade-in relative" style={{ marginBottom: '8rem', paddingTop: '3rem', paddingBottom: '3rem' }}>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl bg-gradient-to-r from-transparent via-white/10 to-transparent" style={{ height: '1px' }}></div>
@@ -214,7 +213,7 @@ const Services = () => {
                  <ShieldCheck className="value-icon" strokeWidth={1.5} size={28} />
                </div>
                <h3 className="relative z-10">Posture Protectrice</h3>
-               <p className="flex-grow relative z-10">Proximité stratégique d'un Conseiller en Gestion de Patrimoine dédiée exclusivement à vos intérêts.</p>
+               <p className="flex-grow relative z-10">Proximité stratégique d'un Conseiller en Gestion de Patrimoine dédié exclusivement à vos intérêts.</p>
              </div>
 
              {/* Step 2 */}
@@ -234,7 +233,7 @@ const Services = () => {
                  <Target className="value-icon" strokeWidth={1.5} size={28} />
                </div>
                <h3 className="relative z-10">Consolidation</h3>
-               <p className="flex-grow relative z-10">Pilotage et agrégation fine sur toutes les classes d'actifs de la performance.</p>
+               <p className="flex-grow relative z-10">Pilotage et agrégation fine de la performance sur toutes les classes d'actifs.</p>
              </div>
             </div>
           </div>

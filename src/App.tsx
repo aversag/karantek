@@ -22,10 +22,37 @@ function ScrollToTop() {
   return null;
 }
 
+function FadeInObserver() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.fade-in:not(.visible)').forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <div className="app-wrapper">
       <ScrollToTop />
+      <FadeInObserver />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

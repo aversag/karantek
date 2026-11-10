@@ -34,7 +34,7 @@ const Contact = () => {
 
             <div className="form-group">
               <label htmlFor="email">Adresse e-mail</label>
-              <input type="email" id="email" name="email" required placeholder="contact@karantek.fr" />
+              <input type="email" id="email" name="email" required placeholder="jean.dupont@exemple.fr" />
             </div>
 
             <div className="form-group">

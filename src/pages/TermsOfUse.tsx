@@ -14,7 +14,7 @@ const TermsOfUse = () => {
           
           <div className="text-[var(--color-text-muted)] leading-relaxed" style={{ fontSize: '1.05rem' }}>
             <p className="text-[var(--color-accent)] font-medium" style={{ marginBottom: '2.5rem' }}>
-              Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
+              Dernière mise à jour : 12/03/2026
             </p>
 
             <h2 className="text-2xl text-white" style={{ fontFamily: 'var(--font-heading)', marginTop: '2.5rem', marginBottom: '1rem' }}>1. Objet</h2>
