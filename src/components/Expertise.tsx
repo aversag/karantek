@@ -1,58 +1,37 @@
-
-
 const Expertise = () => {
   return (
-    <section id="expertise" className="section expertise-section">
-      <div className="container">
-        <div className="text-left">
-          <h2 className="section-title fade-in">Parcours & Expertise</h2>
-        </div>
-        
-        <div className="expertise-content">
-          <div className="expertise-text glass-panel fade-in delay-1">
+    <section id="expertise" className="section">
+      <div className="container ledger">
+        <h2 className="ledger-title">Parcours</h2>
+
+        <div>
+          <p className="lede">
+            Karantek est un cabinet de conseil en gestion de patrimoine qui se distingue de l'offre classique des banques privées.
+          </p>
+          <div className="prose">
             <p>
-              Après plusieurs expériences au sein d'établissements bancaires de premier rang 
-              (Indosuez, Lazard, HSBC Private Bank) mais également au sein de single et multi family offices 
+              Après plusieurs expériences au sein d'établissements bancaires de premier rang
+              (Indosuez, Lazard, HSBC Private Bank) mais également au sein de single et multi family offices
               nationaux (SGPA, Sycomore Family Office), j'ai décidé de créer Karantek.
             </p>
-            <p className="highlight-text">
-              Karantek est un cabinet de Conseil en Gestion de Patrimoine qui propose des solutions innovantes, se
-              différenciant de l'offre classique des banques privées.
-            </p>
             <p>
-              Travailler en tant que conseiller financier auprès de groupes familiaux m'a permis 
-              de mieux comprendre leurs besoins et d'avoir une vision globale de la gestion de 
-              patrimoine. J'ai souhaité mettre cette expérience au profit de mes clients dans une 
+              Travailler en tant que conseiller financier auprès de groupes familiaux m'a permis
+              de mieux comprendre leurs besoins et d'avoir une vision globale de la gestion de
+              patrimoine. J'ai souhaité mettre cette expérience au profit de mes clients dans une
               relation de confiance mutuelle.
             </p>
           </div>
-          
-          <div className="founder-info fade-in delay-2">
-            <div className="founder-card glass-panel">
-              <div className="founder-avatar">
-                <img src="/romain_guitelmacher.png" alt="Romain Guitelmacher" className="avatar-image" />
-              </div>
-              <h3>Romain Guitelmacher</h3>
-              <span className="role">Fondateur</span>
+
+          <dl className="rows">
+            <div className="row">
+              <dt className="row-title">Banques privées</dt>
+              <dd className="row-text">Indosuez, Lazard, HSBC Private Bank</dd>
             </div>
-            
-            <div className="experience-timeline">
-              <div className="timeline-item">
-                <div className="timeline-dot"></div>
-                <div className="timeline-content">
-                  <h4>Banques de premier rang</h4>
-                  <p>Indosuez, Lazard, HSBC Private Bank</p>
-                </div>
-              </div>
-              <div className="timeline-item">
-                <div className="timeline-dot"></div>
-                <div className="timeline-content">
-                  <h4>Family Offices Nationaux</h4>
-                  <p>SGPA, Sycomore Family Office</p>
-                </div>
-              </div>
+            <div className="row">
+              <dt className="row-title">Family offices</dt>
+              <dd className="row-text">SGPA, Sycomore Family Office</dd>
             </div>
-          </div>
+          </dl>
         </div>
       </div>
     </section>

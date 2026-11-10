@@ -52,7 +52,7 @@ const Footer = () => {
           </div>
 
           <div className="footer-legal fade-in delay-3">
-            <h3>Mentions Légales</h3>
+            <h3>Mentions légales</h3>
             <div className="flex flex-col gap-4">
               <p>Numéro Orias : <strong>22005549</strong></p>
               <Link to="/politique-de-confidentialite">Politique de confidentialité</Link>

@@ -1,34 +1,26 @@
-
-import { ArrowRight } from 'lucide-react';
-
 const Hero = () => {
   return (
-    <section id="hero" className="hero-section">
-      <div className="hero-background">
-        <div className="gradient-sphere sphere-1"></div>
-        <div className="gradient-sphere sphere-2"></div>
-      </div>
-      
-      <div className="container hero-content">
-        <div className="hero-text glass-panel fade-in delay-1">
-          <span className="subtitle">Conseiller en Gestion de Patrimoine</span>
-          <h1 className="title">
-            Karantek
-            <br />
-            <span className="highlight">Stratégies d'Investissements</span>
-          </h1>
-          <p className="description">
-            Des solutions innovantes et sur-mesure pour donner vie à vos convictions dans un cadre optimal et performant.
+    <section id="hero" className="hero">
+      <div className="container hero-grid">
+        <div className="hero-copy">
+          <p className="hero-kicker">Conseil en gestion de patrimoine, Lyon</p>
+          <h1 className="hero-title">Stratégies d'investissements</h1>
+          <p className="hero-lead">
+            Un cabinet indépendant, fondé par un ancien banquier privé, pour construire et piloter votre patrimoine en dehors de l'offre classique des banques privées.
           </p>
           <div className="hero-actions">
-            <a href="#offre" className="btn btn-primary">
-              Découvrir notre offre
-            </a>
-            <a href="#contact" className="btn btn-glass group">
-              Nous contacter <ArrowRight size={18} className="icon-right" />
-            </a>
+            <a href="#contact-form" className="btn btn-solid">Prendre rendez-vous</a>
+            <a href="#offre" className="link-quiet">Découvrir l'offre</a>
           </div>
         </div>
+
+        <figure className="hero-portrait">
+          <img src="/romain_guitelmacher.png" alt="Romain Guitelmacher" width={358} height={448} />
+          <figcaption>
+            <span className="portrait-name">Romain Guitelmacher</span>
+            <span className="portrait-role">Fondateur, ancien d'Indosuez, Lazard et HSBC Private Bank</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

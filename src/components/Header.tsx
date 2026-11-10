@@ -50,11 +50,11 @@ const Header = () => {
       <div className="container header-content">
         <Link to="/" className={`logo flex items-center transition-all duration-300 ease-out ${isScrolled ? 'gap-0' : 'gap-2'}`}>
           <img src="/logo-karentek.png" alt="Logo Karantek" className="h-8 md:h-10 w-auto" />
-          <span className={`overflow-hidden transition-all duration-300 ease-out whitespace-nowrap origin-left ${isScrolled ? 'max-w-0 opacity-0' : 'max-w-[150px] opacity-100'}`}>KARANTEK</span>
+          <span className={`overflow-hidden transition-all duration-300 ease-out whitespace-nowrap origin-left ${isScrolled ? 'max-w-0 opacity-0' : 'max-w-[220px] opacity-100'}`}>KARANTEK</span>
         </Link>
         
         <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <Link to="/#expertise" className={`nav-item mobile-nav-main ${activeSection === 'expertise' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Expertise</Link>
+          <Link to="/#expertise" className={`nav-item mobile-nav-main ${activeSection === 'expertise' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Parcours</Link>
           <Link to="/#valeurs" className={`nav-item mobile-nav-main ${activeSection === 'valeurs' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Valeurs</Link>
           
           <div className="relative group w-full md:w-auto">
@@ -148,8 +148,8 @@ const Header = () => {
             </div>
           </div>
 
-          <Link to="/#contact" className="btn btn-accent mt-6 md:mt-0" onClick={() => setIsMenuOpen(false)}>
-            Nous Contacter
+          <Link to="/#contact-form" className="btn btn-accent mt-6 md:mt-0" onClick={() => setIsMenuOpen(false)}>
+            Prendre rendez-vous
           </Link>
         </nav>
 
