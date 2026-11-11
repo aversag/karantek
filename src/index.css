@@ -579,6 +579,7 @@ button {
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
   width: 100%;
   padding: 0.6rem 0;
@@ -597,12 +598,31 @@ button {
   resize: vertical;
 }
 
+.contact-form select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 2rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23ede8df' stroke-opacity='0.6' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.25rem center;
+}
+
+.contact-form select:invalid {
+  color: rgba(237, 232, 223, 0.28);
+}
+
+.contact-form select option {
+  color: var(--color-ivory);
+  background: var(--color-bg);
+}
+
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: rgba(237, 232, 223, 0.28);
 }
 
 .contact-form input:focus,
+.contact-form select:focus,
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--color-accent);

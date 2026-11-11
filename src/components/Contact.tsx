@@ -39,7 +39,14 @@ const Contact = () => {
 
           <div className="form-group">
             <label htmlFor="subject">Objet</label>
-            <input type="text" id="subject" name="subject" required placeholder="Demande de renseignements" />
+            <select id="subject" name="subject" required defaultValue="">
+              <option value="" disabled>Choisir un objet</option>
+              <option>Premier rendez-vous</option>
+              <option>Investissement coté</option>
+              <option>Marchés privés et immobilier</option>
+              <option>Suivi et gouvernance</option>
+              <option>Autre demande</option>
+            </select>
           </div>
 
           <div className="form-group">
