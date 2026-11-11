@@ -14,13 +14,20 @@ const Hero = () => {
           </div>
         </div>
 
-        <figure className="hero-portrait">
-          <img src="/romain_guitelmacher.png" alt="Romain Guitelmacher" width={358} height={448} />
-          <figcaption>
-            <span className="portrait-name">Romain Guitelmacher</span>
-            <span className="portrait-role">Fondateur, ancien d'Indosuez, Lazard et HSBC Private Bank</span>
-          </figcaption>
-        </figure>
+        <dl className="hero-facts">
+          <div>
+            <dt>Cabinet</dt>
+            <dd>Lyon</dd>
+          </div>
+          <div>
+            <dt>Expérience</dt>
+            <dd>Indosuez, Lazard, HSBC Private Bank, family offices</dd>
+          </div>
+          <div>
+            <dt>Immatriculation ORIAS</dt>
+            <dd>22005549</dd>
+          </div>
+        </dl>
       </div>
     </section>
   );

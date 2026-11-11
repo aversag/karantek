@@ -22,6 +22,14 @@ const Expertise = () => {
             </p>
           </div>
 
+          <figure className="signature">
+            <img src="/romain_guitelmacher.png" alt="Romain Guitelmacher" width={358} height={448} loading="lazy" />
+            <figcaption>
+              <span className="signature-name">Romain Guitelmacher</span>
+              <span className="signature-role">Fondateur</span>
+            </figcaption>
+          </figure>
+
           <dl className="rows">
             <div className="row">
               <dt className="row-title">Banques privées</dt>
