@@ -322,22 +322,32 @@ button {
   border-top: 1px solid var(--color-accent);
 }
 
-.hero-facts > div {
-  padding: 1.25rem 0;
+.hero-facts a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.35rem 0;
   border-bottom: 1px solid var(--rule);
+  text-decoration: none;
 }
 
-.hero-facts dt {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  margin-bottom: 0.35rem;
-}
-
-.hero-facts dd {
+.fact-title {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
-  line-height: 1.3;
+  font-size: 1.45rem;
+  line-height: 1.25;
   color: var(--color-ivory);
+  transition: color 200ms ease;
+}
+
+.fact-text {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.hero-facts a:hover .fact-title,
+.hero-facts a:focus-visible .fact-title {
+  color: var(--color-accent);
 }
 
 .signature {
@@ -904,8 +914,8 @@ button {
     margin-top: 2.25rem;
   }
 
-  .hero-facts dd {
-    font-size: 1.2rem;
+  .fact-title {
+    font-size: 1.3rem;
   }
 
   .ledger-title {

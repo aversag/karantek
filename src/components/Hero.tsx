@@ -14,20 +14,20 @@ const Hero = () => {
           </div>
         </div>
 
-        <dl className="hero-facts">
-          <div>
-            <dt>Cabinet</dt>
-            <dd>Lyon</dd>
-          </div>
-          <div>
-            <dt>Expérience</dt>
-            <dd>Indosuez, Lazard, HSBC Private Bank, family offices</dd>
-          </div>
-          <div>
-            <dt>Immatriculation ORIAS</dt>
-            <dd>22005549</dd>
-          </div>
-        </dl>
+        <nav className="hero-facts" aria-label="Notre offre">
+          <a href="#investissement-cote">
+            <span className="fact-title">Investissement coté</span>
+            <span className="fact-text">Gestion personnalisée ou déléguée, en architecture ouverte.</span>
+          </a>
+          <a href="#investissement-non-cote">
+            <span className="fact-title">Marchés privés et immobilier</span>
+            <span className="fact-text">Fonds institutionnels, club deals et foncières dédiées.</span>
+          </a>
+          <a href="#suivi-reporting">
+            <span className="fact-title">Suivi et gouvernance</span>
+            <span className="fact-text">Agrégation de vos comptes et contrôle de la stratégie dans la durée.</span>
+          </a>
+        </nav>
       </div>
     </section>
   );
