@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Contact = () => {
   return (
     <section id="contact-form" className="section">
@@ -5,7 +7,7 @@ const Contact = () => {
         <div className="ledger-title">
           <h2 style={{ fontSize: 'inherit' }}>Prendre rendez-vous</h2>
           <div className="contact-direct">
-            <p>Ou directement :</p>
+            <p>Ou directement&nbsp;:</p>
             <a href="tel:+33609141170">+33 6 09 14 11 70</a>
           </div>
         </div>
@@ -13,6 +15,7 @@ const Contact = () => {
         <form
           name="contact"
           method="POST"
+          action="/merci"
           data-netlify="true"
           netlify-honeypot="bot-field"
           className="contact-form"
@@ -21,7 +24,7 @@ const Contact = () => {
 
           <p className="hidden" style={{ display: 'none' }}>
             <label>
-              Ne pas remplir ce champ si vous êtes humain : <input name="bot-field" />
+              Ne pas remplir ce champ si vous êtes humain&nbsp;: <input name="bot-field" />
             </label>
           </p>
 
@@ -37,24 +40,36 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="subject">Objet</label>
-            <select id="subject" name="subject" required defaultValue="">
-              <option value="" disabled>Choisir un objet</option>
-              <option>Premier rendez-vous</option>
-              <option>Investissement coté</option>
-              <option>Marchés privés et immobilier</option>
-              <option>Suivi et gouvernance</option>
-              <option>Autre demande</option>
-            </select>
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="phone">Téléphone <span className="optional">(facultatif)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" autoComplete="tel" />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="subject">Objet</label>
+              <select id="subject" name="subject" required defaultValue="">
+                <option value="" disabled>Choisir un objet</option>
+                <option>Premier rendez-vous</option>
+                <option>Investissement coté</option>
+                <option>Marchés privés et immobilier</option>
+                <option>Suivi et gouvernance</option>
+                <option>Autre demande</option>
+              </select>
+            </div>
           </div>
 
           <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" rows={5} required placeholder="Comment pouvons-nous vous aider ?"></textarea>
+            <label htmlFor="message">Message <span className="optional">(facultatif)</span></label>
+            <textarea id="message" name="message" rows={5} placeholder="Votre situation, vos questions, vos disponibilités"></textarea>
           </div>
 
-          <button type="submit" className="btn btn-solid">Envoyer le message</button>
+          <p className="form-note">
+            Vos coordonnées servent uniquement à répondre à votre demande. Voir notre{' '}
+            <Link to="/politique-de-confidentialite">politique de confidentialité</Link>.
+          </p>
+
+          <button type="submit" className="btn btn-solid">Demander un rendez-vous</button>
         </form>
       </div>
     </section>

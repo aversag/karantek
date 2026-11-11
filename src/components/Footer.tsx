@@ -1,63 +1,63 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const mailto = () => `mailto:${'contact'}@${'karantek.fr'}`;
+
 const Footer = () => {
   return (
     <footer id="contact" className="site-footer">
       <div className="container">
         <div className="footer-grid">
-          <div className="footer-brand fade-in delay-1 flex items-start gap-4">
-            <img src="/logo-karentek.png" alt="Logo Karantek" className="h-[75px] md:h-[90px] w-auto mt-1" />
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold tracking-widest text-white mb-1">KARANTEK</span>
-              <p className="subtitle">Stratégies d'Investissements</p>
-              <p className="description mt-3">
-                Des solutions innovantes et sur-mesure pour donner vie à vos convictions dans un cadre optimal et performant.
-              </p>
+          <div className="footer-brand fade-in">
+            <img src="/logo-karantek.png" alt="" width={155} height={180} />
+            <div>
+              <span className="footer-name">KARANTEK</span>
+              <p className="subtitle">Stratégies d’investissement</p>
             </div>
           </div>
 
-          <div className="footer-contact fade-in delay-2">
+          <div className="footer-contact fade-in">
             <h3>Contact</h3>
             <ul className="contact-list">
               <li>
-                <Phone size={18} className="contact-icon" />
+                <Phone size={18} className="contact-icon" aria-hidden="true" />
                 <a href="tel:+33609141170">+33 6 09 14 11 70</a>
               </li>
               <li>
-                <Mail size={18} className="contact-icon" />
-                <a 
-                  href="#" 
+                <Mail size={18} className="contact-icon" aria-hidden="true" />
+                <a
+                  href="#"
                   onMouseEnter={(e) => {
-                    e.currentTarget.href = `mailto:${"contact"}@${"karantek.fr"}`;
+                    e.currentTarget.href = mailto();
                   }}
                   onFocus={(e) => {
-                    e.currentTarget.href = `mailto:${"contact"}@${"karantek.fr"}`;
+                    e.currentTarget.href = mailto();
                   }}
                   onClick={(e) => {
                     if (e.currentTarget.getAttribute('href') === '#') {
                       e.preventDefault();
-                      window.location.href = `mailto:${"contact"}@${"karantek.fr"}`;
+                      window.location.href = mailto();
                     }
                   }}
                 >
-                  {`contact@${"karantek.fr"}`}
+                  {`contact@${'karantek.fr'}`}
                 </a>
               </li>
               <li>
-                <MapPin size={18} className="contact-icon" />
-                <span>Lyon, France</span>
+                <MapPin size={18} className="contact-icon" aria-hidden="true" />
+                <span>14 rue Ferrandière<br />69002 Lyon</span>
               </li>
             </ul>
           </div>
 
-          <div className="footer-legal fade-in delay-3">
-            <h3>Mentions légales</h3>
-            <div className="flex flex-col gap-4">
-              <p>Numéro Orias : <strong>22005549</strong></p>
-              <Link to="/politique-de-confidentialite">Politique de confidentialité</Link>
-              <Link to="/conditions-generales-utilisation">Conditions générales d'utilisation</Link>
-            </div>
+          <div className="footer-legal fade-in">
+            <h3>Informations</h3>
+            <ul>
+              <li>ORIAS n°&nbsp;22005549</li>
+              <li><Link to="/mentions-legales">Mentions légales</Link></li>
+              <li><Link to="/politique-de-confidentialite">Politique de confidentialité</Link></li>
+              <li><Link to="/conditions-generales-utilisation">Conditions générales d’utilisation</Link></li>
+            </ul>
           </div>
         </div>
 

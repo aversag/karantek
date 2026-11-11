@@ -5,19 +5,22 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
+import LegalNotice from './pages/LegalNotice';
+import ThankYou from './pages/ThankYou';
+import NotFound from './pages/NotFound';
 
 function ScrollToTop() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key } = useLocation();
 
   useEffect(() => {
     if (hash) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
-    } else {
-      window.scrollTo(0, 0);
+      return () => clearTimeout(timer);
     }
-  }, [pathname, hash]);
+    window.scrollTo(0, 0);
+  }, [pathname, hash, key]);
 
   return null;
 }
@@ -51,6 +54,7 @@ function FadeInObserver() {
 function App() {
   return (
     <div className="app-wrapper">
+      <a href="#contenu" className="skip-link">Aller au contenu</a>
       <ScrollToTop />
       <FadeInObserver />
       <Header />
@@ -58,6 +62,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/politique-de-confidentialite" element={<PrivacyPolicy />} />
         <Route path="/conditions-generales-utilisation" element={<TermsOfUse />} />
+        <Route path="/mentions-legales" element={<LegalNotice />} />
+        <Route path="/merci" element={<ThankYou />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

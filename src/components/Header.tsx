@@ -1,18 +1,30 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Target, TrendingUp, Rocket, BarChart3, LayoutDashboard } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+
+const offres = [
+  { to: '/#offre', id: 'offre', label: 'Notre offre' },
+  { to: '/#investissement-cote', id: 'investissement-cote', label: 'Investissement coté' },
+  { to: '/#investissement-non-cote', id: 'investissement-non-cote', label: 'Marchés privés et immobilier' },
+  { to: '/#suivi-reporting', id: 'suivi-reporting', label: 'Suivi et gouvernance' },
+  { to: '/#synthese', id: 'synthese', label: 'Notre méthode' },
+];
+
+const offreIds = offres.map((o) => o.id);
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isOffresOpenMobile, setIsOffresOpenMobile] = useState(false);
+  const [isOffresOpen, setIsOffresOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -31,133 +43,97 @@ const Header = () => {
       }
     );
 
-    const sections = document.querySelectorAll('section[id], div[id]');
-    const relevantIds = [
-      'hero', 'expertise', 'valeurs', 'offre', 'contact', 'contact-form',
-      'investissement-cote', 'investissement-non-cote', 'suivi-reporting', 'synthese'
-    ];
-    sections.forEach((section) => {
-      if (relevantIds.includes(section.id)) {
-        observer.observe(section);
-      }
+    const relevantIds = ['hero', 'expertise', 'valeurs', 'contact', 'contact-form', ...offreIds];
+    relevantIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
+  }, [pathname]);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsOffresOpen(false);
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
+  const closeAll = () => {
+    setIsMenuOpen(false);
+    setIsOffresOpen(false);
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+  };
+
+  const isActive = (id: string) => (pathname === '/' && activeSection === id ? 'active' : '');
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="container header-content">
-        <Link to="/" className={`logo flex items-center transition-all duration-300 ease-out ${isScrolled ? 'gap-0' : 'gap-2'}`}>
-          <img src="/logo-karentek.png" alt="Logo Karantek" className="h-8 md:h-10 w-auto" />
-          <span className={`overflow-hidden transition-all duration-300 ease-out whitespace-nowrap origin-left ${isScrolled ? 'max-w-0 opacity-0' : 'max-w-[220px] opacity-100'}`}>KARANTEK</span>
+        <Link to="/" className="logo" aria-label="Karantek, accueil" onClick={closeAll}>
+          <img src="/logo-karantek.png" alt="" width={155} height={180} />
+          <span className="logo-text">KARANTEK</span>
         </Link>
-        
-        <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <Link to="/#expertise" className={`nav-item mobile-nav-main ${activeSection === 'expertise' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Parcours</Link>
-          <Link to="/#valeurs" className={`nav-item mobile-nav-main ${activeSection === 'valeurs' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Valeurs</Link>
-          
-          <div className="relative group w-full md:w-auto">
-            <Link to="/#offre" className={`nav-item flex items-center justify-between md:justify-start gap-1 w-full md:w-auto ${['offre', 'investissement-cote', 'investissement-non-cote', 'suivi-reporting', 'synthese'].includes(activeSection) ? 'active' : ''}`} onClick={(e) => {
-              if (window.innerWidth < 768) {
-                e.preventDefault();
-                setIsOffresOpenMobile(!isOffresOpenMobile);
-              } else {
-                setIsMenuOpen(false);
-              }
-            }}>
-              Offres <ChevronDown size={16} className={`transition-transform duration-300 md:group-hover:rotate-180 ${isOffresOpenMobile ? 'rotate-180' : ''}`} />
-            </Link>
-            
-            {/* Desktop Dropdown */}
-            <div 
-              style={{ padding: '64px', maxWidth: '850px' }}
-              className="fixed top-[80px] left-1/2 -translate-x-1/2 w-[90vw] bg-[#101830]/95 backdrop-blur-2xl border border-[rgba(255,255,255,0.08)] rounded-[2rem] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 translate-y-2 group-hover:translate-y-0 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.05)] z-50 hidden md:block before:absolute before:-top-6 before:left-0 before:w-full before:h-6"
+
+        <nav id="site-nav" aria-label="Navigation principale" className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+          <Link to="/#expertise" className={`nav-item mobile-nav-main ${isActive('expertise')}`} onClick={closeAll}>Le cabinet</Link>
+          <Link to="/#valeurs" className={`nav-item mobile-nav-main ${isActive('valeurs')}`} onClick={closeAll}>Valeurs</Link>
+
+          <div className="nav-group">
+            <Link
+              to="/#offre"
+              className={`nav-item ${pathname === '/' && offreIds.includes(activeSection) ? 'active' : ''}`}
+              onClick={closeAll}
             >
-              
-              <div style={{ columnGap: '64px', rowGap: '40px' }} className="grid grid-cols-2">
-                <Link to="/#offre" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
-                    <Target size={20} strokeWidth={1.5} />
-                  </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Approche Globale</span>
-                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
-                      Vision 360° pour une stratégie sur-mesure.
-                    </p>
-                  </div>
-                </Link>
+              Offres
+            </Link>
+            <button
+              type="button"
+              className="nav-group-toggle"
+              aria-expanded={isOffresOpen}
+              aria-controls="offres-menu"
+              aria-label={isOffresOpen ? 'Masquer le détail des offres' : 'Afficher le détail des offres'}
+              onClick={() => setIsOffresOpen(!isOffresOpen)}
+            >
+              <ChevronDown size={16} aria-hidden="true" />
+            </button>
 
-                <Link to="/#investissement-cote" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
-                    <TrendingUp size={20} strokeWidth={1.5} />
-                  </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Investissement Coté</span>
-                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
-                      Gestion transparente sur les marchés.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link to="/#investissement-non-cote" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
-                    <Rocket size={20} strokeWidth={1.5} />
-                  </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Non Coté & Immobilier</span>
-                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
-                      Diversification dans l'économie réelle.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link to="/#suivi-reporting" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
-                    <BarChart3 size={20} strokeWidth={1.5} />
-                  </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Suivi & Reporting</span>
-                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
-                      Rapports précis et accompagnement continu.
-                    </p>
-                  </div>
-                </Link>
-
-                <Link to="/#synthese" className="flex items-start gap-4 p-4 rounded-xl transition-all duration-200 hover:bg-white/[0.05] group/item cursor-pointer" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-11 h-11 rounded-lg flex-shrink-0 flex items-center justify-center bg-white/[0.05] border border-white/[0.08] text-white/50 group-hover/item:text-[var(--color-accent)] group-hover/item:border-[var(--color-accent)]/30 transition-all duration-300">
-                    <LayoutDashboard size={20} strokeWidth={1.5} />
-                  </div>
-                  <div className="flex flex-col min-w-0">
-                    <span className="text-[15px] font-medium text-white/90 group-hover/item:text-[var(--color-accent)] transition-colors duration-200">Synthèse Globale</span>
-                    <p className="text-[13px] text-white/40 leading-relaxed mt-1">
-                      Vue d'ensemble pour décider en confiance.
-                    </p>
-                  </div>
-                </Link>
-              </div>
-            </div>
-
-            {/* Mobile nested links - only visible on mobile when menu is open */}
-            <div className={`flex-col pl-4 mt-2 space-y-3 border-l-2 border-[var(--color-accent)]/30 md:hidden overflow-hidden transition-all duration-300 ${isOffresOpenMobile ? 'max-h-[500px] opacity-100 flex pb-4' : 'max-h-0 opacity-0 hidden'}`}>
-              <Link to="/#offre" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Approche Globale</Link>
-              <Link to="/#investissement-cote" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Investissement Coté</Link>
-              <Link to="/#investissement-non-cote" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Non Coté & Immobilier</Link>
-              <Link to="/#suivi-reporting" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Suivi & Reporting</Link>
-              <Link to="/#synthese" className="mobile-sub-item" onClick={() => setIsMenuOpen(false)}><span className="mobile-sub-dot" />Synthèse Globale</Link>
-            </div>
+            <ul id="offres-menu" className={`nav-dropdown ${isOffresOpen ? 'open' : ''}`}>
+              {offres.map((o) => (
+                <li key={o.id}>
+                  <Link to={o.to} onClick={closeAll}>{o.label}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <Link to="/#contact-form" className="btn btn-accent mt-6 md:mt-0" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/#contact-form" className="btn btn-accent" onClick={closeAll}>
             Prendre rendez-vous
           </Link>
         </nav>
 
-        <button 
+        <button
+          type="button"
           className="mobile-menu-btn"
+          aria-expanded={isMenuOpen}
+          aria-controls="site-nav"
+          aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <X size={24} color="#fff" /> : <Menu size={24} color="#fff" />}
+          {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
         </button>
       </div>
     </header>

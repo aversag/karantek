@@ -15,34 +15,33 @@ const Rows = ({ items, numbered = false }: { items: Item[]; numbered?: boolean }
 );
 
 const piliers: Item[] = [
-  { title: 'Gestion financière', text: 'Alignement strict de nos intérêts avec les vôtres, contrôle méthodique de la performance et transparence totale sur les coûts.' },
-  { title: 'Gestion immobilière', text: 'Accès privilégié à des foncières dédiées et club deals exclusifs. Structuration de co-investissements et optimisation fiscale rigoureuse.' }
+  { title: 'Gestion financière', text: 'Des intérêts alignés sur les vôtres, un contrôle méthodique de la performance et des coûts communiqués en détail.' },
+  { title: 'Gestion immobilière', text: 'Accès à des foncières dédiées et à des club deals, structuration de co-investissements et optimisation fiscale.' }
 ];
 
 const cote: Item[] = [
-  { title: 'Gestion personnalisée', text: 'Agilité tactique, intégration ESG et création de produits structurés sur-mesure.' },
-  { title: 'Gestion déléguée', text: "Sélection d'experts via une architecture ouverte et mise en concurrence rigoureuse." }
+  { title: 'Gestion personnalisée', text: 'Ajustements tactiques, intégration des critères ESG et produits structurés conçus sur mesure.' },
+  { title: 'Gestion déléguée', text: 'Sélection de gérants en architecture ouverte, régulièrement mis en concurrence.' }
 ];
 
 const nonCote: Item[] = [
-  { title: 'Fonds institutionnels', text: "Diversification optimale via l'accès privilégié aux grands fonds fermés (vintages et maturités)." },
-  { title: 'Direct et niche', text: 'Exposition ciblée sur des thématiques porteuses (Tech, US, Santé) sans frais intermédiaires.' },
-  { title: 'Club deals', text: 'Opérations tangibles confidentielles de PME et dette obligataire offrant une résilience asymétrique.' }
+  { title: 'Fonds institutionnels', text: 'Diversification par l’accès à de grands fonds fermés, en variant millésimes et maturités.' },
+  { title: 'Direct et niche', text: 'Exposition ciblée sur des thématiques identifiées : technologie, États-Unis, santé.' },
+  { title: 'Club deals', text: 'Opérations confidentielles sur des PME et de la dette obligataire, adossées à des actifs tangibles.' }
 ];
 
 const suivi: Item[] = [
-  { title: 'Marchés cotés', text: 'Contrôle drastique de la volatilité et respect strict des limites de risques imposées.' },
-  { title: 'Private equity', text: 'Gestion centralisée des appels de fonds et modélisation précise des cash-flows futurs.' },
-  { title: 'Immobilier', text: 'Pilotage pro-actif des conditions de crédit et consolidation globale des rendements nets.' }
+  { title: 'Marchés cotés', text: 'Suivi de la volatilité et respect des limites de risque fixées ensemble.' },
+  { title: 'Private equity', text: 'Gestion centralisée des appels de fonds et modélisation des flux de trésorerie à venir.' },
+  { title: 'Immobilier', text: 'Pilotage proactif des conditions de crédit et consolidation des rendements nets.' }
 ];
 
 const methode: Item[] = [
-  { title: 'Posture protectrice', text: "Proximité stratégique d'un conseiller en gestion de patrimoine dédié exclusivement à vos intérêts." },
-  { title: 'Sélection ouverte', text: "Sélection des meilleurs opérateurs mondiaux sans aucun biais d'affiliation." },
-  { title: 'Consolidation', text: "Pilotage et agrégation fine de la performance sur toutes les classes d'actifs." }
+  { title: 'Bilan', text: 'Un premier entretien pour comprendre votre situation, vos objectifs et votre horizon de placement.' },
+  { title: 'Stratégie', text: 'Une allocation construite en architecture ouverte, à partir des supports adaptés à votre situation.' },
+  { title: 'Mise en œuvre', text: 'Sélection des gérants et des opérations, puis mise en place des investissements retenus.' },
+  { title: 'Suivi', text: 'Agrégation de vos comptes, pilotage de la performance sur toutes les classes d’actifs et reporting trimestriel.' }
 ];
-
-const anchor = { scrollMarginTop: '7rem' };
 
 const Services = () => {
   return (
@@ -50,42 +49,45 @@ const Services = () => {
       <div className="container">
         <div className="ledger">
           <h2 className="ledger-title">Notre offre</h2>
-          <Rows items={piliers} />
+          <div>
+            <p className="lede">Deux métiers, la gestion financière et la gestion immobilière, conduits selon les mêmes principes.</p>
+            <Rows items={piliers} />
+          </div>
         </div>
 
         <figure className="quote">
-          <blockquote>« Si belle que soit la stratégie, il faut de temps en temps regarder les résultats. »</blockquote>
+          <blockquote>«&nbsp;Si belle que soit la stratégie, il faut de temps en temps regarder les résultats.&nbsp;»</blockquote>
           <figcaption>Winston Churchill</figcaption>
         </figure>
 
-        <div id="investissement-cote" className="ledger ledger-sub" style={anchor}>
+        <div id="investissement-cote" className="ledger ledger-sub">
           <h3 className="ledger-title">Investissement coté</h3>
           <div>
-            <p className="intro">Une approche rigoureuse et adaptable pour naviguer sereinement sur les marchés financiers.</p>
+            <p className="intro">Une approche rigoureuse et adaptable pour investir sur les marchés financiers.</p>
             <Rows items={cote} />
           </div>
         </div>
 
-        <div id="investissement-non-cote" className="ledger ledger-sub" style={anchor}>
+        <div id="investissement-non-cote" className="ledger ledger-sub">
           <h3 className="ledger-title">Marchés privés et immobilier</h3>
           <div>
-            <p className="intro">Accès exclusif et sélectif aux classes d'actifs décorrélées pour une création de valeur à long terme.</p>
+            <p className="intro">Un accès sélectif à des classes d’actifs peu corrélées aux marchés cotés, pour créer de la valeur sur le long terme.</p>
             <Rows items={nonCote} />
           </div>
         </div>
 
-        <div id="suivi-reporting" className="ledger ledger-sub" style={anchor}>
+        <div id="suivi-reporting" className="ledger ledger-sub">
           <h3 className="ledger-title">Suivi et gouvernance</h3>
           <div>
-            <p className="intro">Pour s'assurer que la stratégie décidée soit bien celle implémentée, nous imposons l'agrégation de vos comptes et un suivi rigoureux sur l'ensemble des actifs.</p>
+            <p className="intro">Pour vérifier que la stratégie décidée est bien celle mise en œuvre, nous agrégeons l’ensemble de vos comptes et suivons chaque actif dans la durée.</p>
             <Rows items={suivi} />
           </div>
         </div>
 
-        <div id="synthese" className="ledger ledger-sub" style={anchor}>
+        <div id="synthese" className="ledger ledger-sub">
           <h3 className="ledger-title">Notre méthode</h3>
           <div>
-            <p className="intro">Un processus d'accompagnement structuré, de la définition de vos objectifs à la consolidation de vos performances globales.</p>
+            <p className="intro">Un accompagnement en quatre temps, de la définition de vos objectifs au suivi de vos investissements.</p>
             <Rows items={methode} numbered />
           </div>
         </div>

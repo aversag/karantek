@@ -7,11 +7,11 @@ import Contact from '../components/Contact';
 
 function Home() {
   useEffect(() => {
-    document.title = "Karantek - Stratégies d'Investissements";
+    document.title = 'Karantek, stratégies d’investissement à Lyon';
   }, []);
 
   return (
-    <main>
+    <main id="contenu" tabIndex={-1}>
       <Hero />
       <Expertise />
       <Values />

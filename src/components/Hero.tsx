@@ -3,14 +3,14 @@ const Hero = () => {
     <section id="hero" className="hero">
       <div className="container hero-grid">
         <div className="hero-copy">
-          <p className="hero-kicker">Conseil en gestion de patrimoine, Lyon</p>
-          <h1 className="hero-title">Stratégies d'investissements</h1>
+          <p className="hero-kicker">Stratégies d’investissement, Lyon</p>
+          <h1 className="hero-title">Le conseil patrimonial, hors des banques privées.</h1>
           <p className="hero-lead">
-            Un cabinet indépendant, fondé par un ancien banquier privé, pour construire et piloter votre patrimoine en dehors de l'offre classique des banques privées.
+            Karantek, cabinet lyonnais fondé par un ancien banquier privé, construit et pilote votre stratégie d’investissement en architecture ouverte.
           </p>
           <div className="hero-actions">
             <a href="#contact-form" className="btn btn-solid">Prendre rendez-vous</a>
-            <a href="#offre" className="link-quiet">Découvrir l'offre</a>
+            <a href="#offre" className="link-quiet">Découvrir l’offre</a>
           </div>
         </div>
 
